@@ -11,8 +11,8 @@ export default function Index() {
             <div className="absolute inset-0">
               <img
                 className="h-full w-full object-cover"
-                src="A1-softball-camps-24/public/a1-hitting-softball.jpg"
-                alt="A1 batting"
+                src="/a1-hitting-softball.jpg"
+                alt="A1 Hitting at LATech 2024"
               />
               <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
             </div>
