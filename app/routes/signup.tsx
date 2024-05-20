@@ -1,7 +1,7 @@
 // routes/signup.tsx
 import { ActionFunction, LoaderFunction, json, redirect } from '@remix-run/node';
 import { useActionData, Form } from '@remix-run/react';
-import { supabase } from '~/supabaseClient';
+import { supabase } from '/supabaseClient';
 
 export const loader: LoaderFunction = async () => {
   return json({});
