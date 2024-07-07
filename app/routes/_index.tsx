@@ -8,6 +8,14 @@ export default function Index() {
     alert("What's behind this button? A treasure trove of softball secrets? A portal to a parallel universe where softball is the national sport? Or maybe just a really, really good story about our camp? Well, you'll have to wait to find out! Stay tuned, slugger! 🌟⚾");
   };
 
+  const handlePayNowClick = () => {
+    alert("Buy Now? Oh, you're eager! Unfortunately, this feature is not available yet. Stay tuned for exciting updates! 💸");
+  };
+
+  const handleInstructionsClick = () => {
+    alert("Instructions? Pfft! Real players don't need instructions! Just kidding, they're on the way! Stay tuned! 📝😜");
+  };
+
   return (
     <>
       <head>
@@ -54,24 +62,30 @@ export default function Index() {
                       View Notes for {user.email}
                     </Link>
                   ) : (
-                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-3 sm:gap-5 sm:space-y-0">
                       <Link
                         to="https://www.a1softballcamps.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
                       >
                         Sign up
                       </Link>
-                      <Link
-                        to="/#"
+                      <button
+                        onClick={handlePayNowClick}
                         className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600"
                       >
-                        Log In
-                      </Link>
+                        Pay Now
+                      </button>
                       <button
                         onClick={handleAboutClick}
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
                       >
                         About
+                      </button>
+                      <button
+                        onClick={handleInstructionsClick}
+                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
+                      >
+                        Instructions
                       </button>
                     </div>
                   )}
