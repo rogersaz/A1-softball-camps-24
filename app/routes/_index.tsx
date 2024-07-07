@@ -13,7 +13,7 @@ export default function Index() {
   };
 
   const handleInstructionsClick = () => {
-    alert("Instructions? Pfft! Real players don't need instructions! Just kidding, they're on the way! Stay tuned! 📝😜");
+    alert("Instructors? They're on the way! Stay tuned! 📝😜");
   };
 
   return (
@@ -53,7 +53,7 @@ export default function Index() {
                   this summer season for the Slice & Dice Machine! 
                 </p>
          
-                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
                   {user ? (
                     <Link
                       to="/notes"
@@ -62,7 +62,7 @@ export default function Index() {
                       View Notes for {user.email}
                     </Link>
                   ) : (
-                    <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-3 sm:gap-5 sm:space-y-0">
+                    <div className="space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
                       <Link
                         to="https://www.a1softballcamps.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
@@ -71,21 +71,21 @@ export default function Index() {
                       </Link>
                       <button
                         onClick={handlePayNowClick}
-                        className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600"
+                        className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600"
                       >
                         Pay Now
                       </button>
                       <button
                         onClick={handleAboutClick}
-                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
+                        className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600"
                       >
                         About
                       </button>
                       <button
                         onClick={handleInstructionsClick}
-                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
+                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600"
                       >
-                        Instructions
+                        Instructors
                       </button>
                     </div>
                   )}
