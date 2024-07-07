@@ -17,7 +17,7 @@ export default function Signup() {
     setIsSubmitting(true);
     try {
       const { data: supabaseData, error } = await supabase
-        .from('signups')
+        .from('camp-signup')
         .insert([{ 
           name: data.name, 
           address: data.address,
