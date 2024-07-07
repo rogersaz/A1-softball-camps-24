@@ -48,7 +48,7 @@ export default function Signup() {
       <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
         <div className="flex flex-col items-center mb-4">
           <h2 className="text-2xl font-semibold text-center">
-            A1 Softball Camps Signup
+            A1 Softball Camp Signup
           </h2>
         </div>
         
