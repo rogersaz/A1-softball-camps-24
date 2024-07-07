@@ -23,7 +23,9 @@ export default function Signup() {
           address: data.address,
           phone: data.phone,
           email: data.email,
-          playingPositions: data.playingPositions
+          playingPositions: data.playingPositions,
+          age: data.age,
+          experienceLevel: data.experienceLevel
         }]);
 
       if (error) {
@@ -32,14 +34,10 @@ export default function Signup() {
       }
 
       console.log('Supabase response:', supabaseData);
-      alert('Signup Successful! 🎉
-
-Congratulations, slugger! You've officially stepped up to the plate. Get ready to knock it out of the park at the A1 Softball Camp! See you on the field! 🌟⚾');
+      alert('Signup Successful! 🎉 Congratulations, slugger! You\'ve officially stepped up to the plate. Get ready to knock it out of the park at the A1 Softball Camp! See you on the field! 🌟⚾');
     } catch (error) {
       console.error('Error:', error);
-      alert(`Error submitting signup: 😱
-
-Uh-oh! Looks like our softball flew out of the park and hit the wrong button. Please check your form and try again. Don't worry, we'll catch it this time! 🥎🔄: ${error.message}`);
+      alert(`Error submitting signup: 😱 Uh-oh! Looks like our softball flew out of the park and hit the wrong button. Please check your form and try again. Don't worry, we'll catch it this time! 🥎🔄: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -93,13 +91,34 @@ Uh-oh! Looks like our softball flew out of the park and hit the wrong button. Pl
           </div>
         </div>
 
+        <div className="grid grid-cols-2 gap-6 mt-4">
+          <div className="col-span-2 md:col-span-1">
+            <label className="block mb-2">Players Age</label>
+            <input 
+              type="number" 
+              {...register("age", { required: true })} 
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Enter your age" 
+            />
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <label className="block mb-2">Experience Level</label>
+            <input 
+              type="text" 
+              {...register("experienceLevel", { required: true })} 
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Enter your experience level" 
+            />
+          </div>
+        </div>
+
         <div className="mt-4">
-          <label className="block mb-2">Playing Positions</label>
+          <label className="block mb-2">Favorite Softball Position:</label>
           <input 
             type="text" 
             {...register("playingPositions", { required: true })} 
             className="w-full px-3 py-2 border rounded-md"
-            placeholder="Enter your playing positions" 
+            placeholder="Enter positions" 
           />
         </div>
 
