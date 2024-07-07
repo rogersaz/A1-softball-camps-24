@@ -32,10 +32,14 @@ export default function Signup() {
       }
 
       console.log('Supabase response:', supabaseData);
-      alert('Signup successful!');
+      alert('Signup Successful! 🎉
+
+Congratulations, slugger! You've officially stepped up to the plate. Get ready to knock it out of the park at the A1 Softball Camp! See you on the field! 🌟⚾');
     } catch (error) {
       console.error('Error:', error);
-      alert(`Error submitting signup: ${error.message}`);
+      alert(`Error submitting signup: 😱
+
+Uh-oh! Looks like our softball flew out of the park and hit the wrong button. Please check your form and try again. Don't worry, we'll catch it this time! 🥎🔄: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
