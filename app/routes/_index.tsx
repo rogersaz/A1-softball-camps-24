@@ -12,10 +12,6 @@ export default function Index() {
     alert("Buy Now? Oh, you're eager! Unfortunately, this feature is not available yet. Stay tuned for exciting updates! 💸");
   };
 
-  const handleInstructionsClick = () => {
-    alert("Instructors? They're on the way! Stay tuned! 📝😜");
-  };
-
   return (
     <>
       <head>
@@ -29,29 +25,26 @@ export default function Index() {
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
-                  src="/a1-hitting-softball.jpg"
+                  src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
                 />
                 <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
               </div>
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                  <span className="block uppercase text-blue-500 drop-shadow-md">
-                    a1
+                  <span className="block uppercase text-white drop-shadow-md">
+                    A1 & FRIENDS
                   </span>
-                  <span className="block uppercase text-blue-500 drop-shadow-md">
-                    LOUISIANA TECH
+                  <span className="block uppercase text-white drop-shadow-md">
+                    SOFTBALL CAMP
                   </span>
-                  <span className="block uppercase text-blue-500 drop-shadow-md">
-                    OF - L/L
+                  <span className="block uppercase text-white drop-shadow-md">
+                    COMING SOON
                   </span>
                 </h1>
         
                 <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-                  I'll be playing for the 2024 Bradenton Slice, @a1softball
-                  from @LATechSB coming to the @FGCLsoftball
-                  this summer season for the Slice & Dice Machine! 
-                </p>
+                  </p>
          
                 <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
                   {user ? (
@@ -81,12 +74,12 @@ export default function Index() {
                       >
                         About
                       </button>
-                      <button
-                        onClick={handleInstructionsClick}
+                      <Link
+                        to="/instructors"
                         className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600"
                       >
                         Instructors
-                      </button>
+                      </Link>
                     </div>
                   )}
                 </div>
