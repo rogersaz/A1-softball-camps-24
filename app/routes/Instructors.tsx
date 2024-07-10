@@ -38,7 +38,7 @@ export default function Index() {
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
-                    <span className="block uppercase text-blue-500 drop-shadow-md">
+                    <span className="block uppercase text-red-500 drop-shadow-md">
                       A1 <br /> Louisiana Tech University
                     </span>
                   </h1>
@@ -48,7 +48,7 @@ export default function Index() {
                   </p>
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
-                    <span className="block uppercase text-blue-500 drop-shadow-md">
+                    <span className="block uppercase text-red-500 drop-shadow-md">
                       Trinity Kennemer <br /> South Dakota State
                     </span>
                   </h1>
@@ -57,7 +57,7 @@ export default function Index() {
                   </p>
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
-                    <span className="block uppercase text-blue-500 drop-shadow-md">
+                    <span className="block uppercase text-red-500 drop-shadow-md">
                       Tristen Turlington <br /> BYU
                     </span>
                   </h1>
@@ -66,7 +66,7 @@ export default function Index() {
                   </p>
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
-                    <span className="block uppercase text-blue-500 drop-shadow-md">
+                    <span className="block uppercase text-red-500 drop-shadow-md">
                       Jaeden Murphy <br /> University of Kansas
                     </span>
                   </h1>
