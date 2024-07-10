@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import { useOptionalUser } from "~/utils";
+import { Helmet } from "react-helmet"; // Import Helmet if not already
 
 export default function Index() {
   const user = useOptionalUser();
@@ -14,7 +15,7 @@ export default function Index() {
 
   return (
     <>
-      <head>
+      <Helmet>
         <title>A1 Softball Camps</title>
         <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
         <meta name="keywords" content="softball camps, A1 softball, softball training, youth softball, sports camps, softball skills, softball clinics" />
@@ -24,14 +25,14 @@ export default function Index() {
         <meta property="og:image" content="/softball-field-HOME-PAGE.jpg" />
         <meta property="og:url" content="https://www.a1softballcamps.com" />
         <meta name="twitter:card" content="summary_large_image" />
-      </head>
-      <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-        <div className="relative sm:pb-16 sm:pt-8">
+      </Helmet>
+      <main className="relative min-h-screen sm:flex sm:items-center sm:justify-center bg-white lg:bg-black">
+        <div className="relative sm:pb-16 sm:pt-8 lg:bg-[url('/grass-background.jpg')] lg:bg-bottom lg:bg-no-repeat">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover lg:hidden"
                   src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
                 />
@@ -45,13 +46,13 @@ export default function Index() {
                   <span className="block uppercase text-white drop-shadow-md">
                     SOFTBALL CAMP
                   </span>
-                  <span className="block uppercase text-white text-3xl shadow-2xl">
+                  <span className="block uppercase text-white text-3xl drop-shadow-md">
                     COMING SOON
                   </span>
                 </h1>
         
                 <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-                  </p>
+                </p>
          
                 <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
                   {user ? (
