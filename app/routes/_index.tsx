@@ -17,6 +17,13 @@ export default function Index() {
       <head>
         <title>A1 Softball Camps</title>
         <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta name="keywords" content="softball camps, A1 softball, softball training, youth softball, sports camps, softball skills, softball clinics" />
+        <meta name="author" content="A1 Softball Camps" />
+        <meta property="og:title" content="A1 Softball Camps" />
+        <meta property="og:description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta property="og:image" content="/softball-field-HOME-PAGE.jpg" />
+        <meta property="og:url" content="https://www.a1softballcamps.com" />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
         <div className="relative sm:pb-16 sm:pt-8">
@@ -38,7 +45,7 @@ export default function Index() {
                   <span className="block uppercase text-white drop-shadow-md">
                     SOFTBALL CAMP
                   </span>
-                  <span className="block uppercase text-white drop-shadow-md">
+                  <span className="block uppercase text-white text-3xl shadow-2xl">
                     COMING SOON
                   </span>
                 </h1>

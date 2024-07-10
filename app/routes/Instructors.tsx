@@ -22,7 +22,7 @@ export default function Index() {
       <Helmet>
         <title>A1 Softball Camps</title>
         <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
-        <meta name="keywords" content="softball camps, A1 softball, Louisiana Tech, softball training, softball clinics, softball skills, sports camps, youth sports" />
+        <meta name="keywords" content="softball camps, A1 softball, Louisiana Tech, softball training, softball clinics, softball skills, sports camps, youth sports, Surprise AZ, Willow Canyon" />
         <meta name="author" content="A1 Softball Camps" />
         <meta property="og:title" content="A1 Softball Camps" />
         <meta property="og:description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
