@@ -22,6 +22,13 @@ export default function Index() {
       <Helmet>
         <title>A1 Softball Camps</title>
         <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta name="keywords" content="softball camps, A1 softball, Louisiana Tech, softball training, softball clinics, softball skills, sports camps, youth sports" />
+        <meta name="author" content="A1 Softball Camps" />
+        <meta property="og:title" content="A1 Softball Camps" />
+        <meta property="og:description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta property="og:image" content="/softball-stack.jpg" />
+        <meta property="og:url" content="https://www.a1softballcamps.com" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
         <div className="relative sm:pb-16 sm:pt-8">
@@ -111,6 +118,15 @@ export default function Index() {
                       </button>
                     </div>
                   )}
+                </div>
+
+                <div className="mt-10 flex justify-center">
+                  <Link
+                    to="https://www.a1softballcamps.com"
+                    className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 text-base font-medium text-white hover:bg-blue-600"
+                  >
+                    Home
+                  </Link>
                 </div>
                 
               </div>
