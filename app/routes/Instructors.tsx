@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import { useOptionalUser } from "~/utils";
+import { Helmet } from "react-helmet"; // Import Helmet if not already
 
 export default function Index() {
   const user = useOptionalUser();
@@ -18,10 +19,10 @@ export default function Index() {
 
   return (
     <>
-      <head>
+      <Helmet>
         <title>A1 Softball Camps</title>
         <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
-      </head>
+      </Helmet>
       <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
         <div className="relative sm:pb-16 sm:pt-8">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -36,11 +37,11 @@ export default function Index() {
               </div>
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
-                  <h3 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-blue-500 drop-shadow-md">
-                      A1 - Louisiana Tech University
+                      A1 <br /> Louisiana Tech University
                     </span>
-                  </h3>
+                  </h1>
 
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     2024 (SOPHOMORE): Appeared in 50 games while starting 48 games primarily in right field … Batted .278 with 42 hits, nine doubles, one home run and 23 RBI … Posted a .986 fielding percentage with 55 putouts, two assists and one error … Ended season on a four-game hitting streak and six-game reached-base streak … Tied for the team-lead with seven multi-RBI games … Registered 10 multi-hit games which ranked fourth on the team … Drove in a career-high four RBI and hit her first collegiate home run with a three-run shot in the bottom of the third inning in a 5-3 win over UL-Lafayette (March 20), the Bulldogs first over the Ragin' Cajuns since April 25, 1998 … Went 2-3 with three RBI and three walks during a 28-2 win over Lindenwood (Feb. 17) … Drove in three runs while going 3-7 in a 5-3 loss at Ole Miss (4/16) … Recorded outfield assists against Sam Houston (March 9) and FIU (May 3) … Recorded a season-high three hits on three separate occasions (Missouri State Feb. 24, Illinois March 2, Ole Miss April 16) … Recorded first career stolen base during a 5-1 win over Sam Houston (3/9) … Helped LA Tech clinch a series victory at Jax State after going 2-4 with a run scored in a 8-3 series finale win (April 14)
@@ -48,7 +49,7 @@ export default function Index() {
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-blue-500 drop-shadow-md">
-                      Trinity Kennemer - South Dakota State
+                      Trinity Kennemer <br /> South Dakota State
                     </span>
                   </h1>
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
@@ -57,16 +58,16 @@ export default function Index() {
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-blue-500 drop-shadow-md">
-                      Tristen Turlington - BYU
+                      Tristen Turlington <br /> BYU
                     </span>
                   </h1>
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
                   </p>
 
-                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-blue-500 drop-shadow-md">
-                      Jaeden Murphy - University of Kansas
+                      Jaeden Murphy <br /> University of Kansas
                     </span>
                   </h1>
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
