@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"; // Import Helmet if not already
 
 export default function Index() {
   const user = useOptionalUser();
-  
+
   const handleAboutClick = () => {
     alert("What's behind this button? A treasure trove of softball secrets? A portal to a parallel universe where softball is the national sport? Or maybe just a really, really good story about our camp? Well, you'll have to wait to find out! Stay tuned, slugger! 🌟⚾");
   };
@@ -32,9 +32,10 @@ export default function Index() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-cover lg:hidden"
+                  className="h-full w-full object-contain lg:hidden"
                   src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
+                  style={{ maxHeight: '100vh' }}
                 />
                 <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
               </div>
