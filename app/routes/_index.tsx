@@ -27,7 +27,7 @@ export default function Index() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <main className="relative min-h-screen sm:flex sm:items-center sm:justify-center bg-white lg:bg-black">
-        <div className="relative sm:pb-16 sm:pt-8 lg:bg-[url('/grass-background.jpg')] lg:bg-bottom lg:bg-no-repeat">
+        <div className="relative sm:pb-16 sm:pt-8 lg:bg-[url('/A1-with-friends-softbbl-camp.jpg')] lg:bg-bottom lg:bg-no-repeat">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
