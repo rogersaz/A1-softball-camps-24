@@ -32,7 +32,7 @@ export default function Index() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-cover lg:hidden"
+                  className="h-full w-full object-cover"
                   src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
                   style={{ maxHeight: '100vh' }}
