@@ -32,10 +32,10 @@ export default function Index() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover lg:hidden"
                   src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
-                  style={{ maxHeight: '100vh', maxWidth: '100vw' }}
+                  style={{ maxHeight: '100vh' }}
                 />
                 <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
               </div>
@@ -51,10 +51,16 @@ export default function Index() {
                     COMING SOON
                   </span>
                 </h1>
-        
+
+                <img
+                  className="mx-auto mt-6 max-w-lg object-contain sm:max-w-3xl"
+                  src="/A1-with-friends-softbbl-camp.jpg"
+                  alt="A1 Softball Camp with Friends"
+                />
+
                 <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
                 </p>
-         
+
                 <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
                   {user ? (
                     <Link
