@@ -27,15 +27,15 @@ export default function Index() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <main className="relative min-h-screen sm:flex sm:items-center sm:justify-center bg-white lg:bg-black">
-        <div className="relative sm:pb-16 sm:pt-8 lg:bg-[url('/A1-with-friends-softbbl-camp.jpg')] lg:bg-bottom lg:bg-no-repeat">
+        <div className="relative sm:pb-16 sm:pt-8">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0">
                 <img
-                  className="h-full w-full object-contain lg:hidden"
+                  className="h-full w-full object-contain"
                   src="/softball-field-HOME-PAGE.jpg"
                   alt="A1 Hitting at LATech 2024"
-                  style={{ maxHeight: '100vh' }}
+                  style={{ maxHeight: '100vh', maxWidth: '100vw' }}
                 />
                 <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
               </div>
