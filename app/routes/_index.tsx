@@ -16,13 +16,13 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>A1 Softball Camps</title>
-        <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
-        <meta name="keywords" content="softball camps, A1 softball, softball training, youth softball, sports camps, softball skills, softball clinics" />
+        <title>A1 Softball Camp With Friends</title>
+        <meta name="description" content="Join A1 Softball Camp With Friends - Surprise AZ 2024 the ultimate softball experience! Improve your skills. Sign up now!" />
+        <meta name="keywords" content="softball camps, A1 softball, softball training, Surprise AZ., youth softball, sports camps, softball skills, softball clinics" />
         <meta name="author" content="A1 Softball Camps" />
-        <meta property="og:title" content="A1 Softball Camps" />
-        <meta property="og:description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
-        <meta property="og:image" content="/softball-field-HOME-PAGE.jpg" />
+        <meta property="og:title" content="A1 Softball Camp With Friends" />
+        <meta property="og:description" content="Join A1 Softball Camps With Friends for the ultimate softball experience! Improve your skills. Sign up now!" />
+        <meta property="og:image" content="/A1-Softball-camp-friends.jpg" />
         <meta property="og:url" content="https://www.a1softballcamps.com" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
