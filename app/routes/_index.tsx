@@ -48,7 +48,7 @@ export default function Index() {
                     SOFTBALL CAMP
                   </span>
                   <span className="block uppercase text-white text-3xl drop-shadow-md">
-                    Mon Aug 5th 2024
+                    Join us on Mon Aug 5th 2024 from 7pm - 9pm
                   </span>
                 </h1>
 
