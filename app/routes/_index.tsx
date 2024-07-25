@@ -42,13 +42,13 @@ export default function Index() {
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32 bg-black lg:bg-transparent">
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
                   <span className="block uppercase text-white drop-shadow-md">
-                    A1 & FRIENDS
+                    Wildcat Summer
                   </span>
                   <span className="block uppercase text-white drop-shadow-md">
                     SOFTBALL CAMP
                   </span>
                   <span className="block uppercase text-white text-3xl drop-shadow-md">
-                    COMING SOON
+                    Mon Aug 5th 2024
                   </span>
                 </h1>
 
