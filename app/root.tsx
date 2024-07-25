@@ -17,7 +17,7 @@ import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "./session.server";
 
 export const meta: MetaFunction = () => {
-  return [{ title: "A1 Softball Camps" }];
+  return [{ title: "Wildcat SSC 2024" }];
 };
 
 export const links: LinksFunction = () => {
