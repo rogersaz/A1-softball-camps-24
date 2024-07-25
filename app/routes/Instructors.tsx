@@ -80,6 +80,34 @@ export default function Index() {
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     Three-time First Team All-Region … Two-time First Team All-Conference … Two-time First Team All-State … Helped lead Willow Canyon to two state championships and three region championships … Finished with a career batting average of .475, second all-time … Produced 156 hits, third all-time … Batted in 138 runners, most all-time
                   </p>
+
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
+                    <span className="block uppercase text-red-500 drop-shadow-md">
+                    Marissa McCann <br /> University of Missouri Tigers
+                    </span>
+                  </h1>
+
+              
+                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
+                    SEC Freshman of the Week (4/2/24 & 3/26/24)
+                    <br /> 2023-24 SEC First-Year Honor Roll
+                    <br /> <strong>PREP</strong>
+                    <ul className="list-disc list-inside">
+                      <li>2023 PGF All-American</li>
+                      <li>2023 Arizona 5A Player of the Year</li>
+                      <li>2022 Arizona 5A State Champions and Player of the Game</li>
+                      <li>2022 Arizona 5A Player of the Year</li>
+                      <li>2022 First Team All-Region</li>
+                      <li>2022 Arizona Republic First Team All-State</li>
+                      <li>2022 All-West Valley Preps Player of the Year</li>
+                      <li>Set school records in wins, ERA, shutouts, strikeouts, complete games, and no-hitter</li>
+                      <li>2022 Perfect Game Fall Showcase 18U MVP Pitcher</li>
+                      <li>2022 Team PGF Premier 18U Runner Up</li>
+                      <li>2021 Arizona 5A State Champions</li>
+                      <li>2021 Perfect Game Fall Showcase 18U MVP</li>
+                      <li>Member of National Honor Society</li>
+                    </ul>
+                  </p>
                 </div>
 
                 <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
