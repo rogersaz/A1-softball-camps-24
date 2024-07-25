@@ -31,12 +31,6 @@ export default function Index() {
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="absolute inset-0 hidden lg:block">
-                {/* <img
-                  className="h-full w-full object-cover"
-                  src="/softball-field-HOME-PAGE.jpg"
-                  alt="A1 Hitting at LATech 2024"
-                  style={{ maxHeight: '100vh' }}
-                /> */}
                 <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
               </div>
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32 bg-black lg:bg-transparent">
@@ -47,8 +41,10 @@ export default function Index() {
                   <span className="block uppercase text-white drop-shadow-md">
                     SOFTBALL CAMP
                   </span>
-                  <span className="block uppercase text-white text-3xl drop-shadow-md">
-                    Join us on Mon Aug 5th 2024 from 7pm - 9pm
+                  <span className="block uppercase text-3xl drop-shadow-md">
+                    <span className="block text-blue-200">Join us on</span>
+                    <span className="block text-blue-400">Mon Aug 5th 2024</span>
+                    <span className="block text-blue-600">from 7pm - 9pm</span>
                   </span>
                 </h1>
 
