@@ -5,10 +5,6 @@ import { Helmet } from "react-helmet";
 export default function Index() {
   const user = useOptionalUser();
 
-  const handleAboutClick = () => {
-    alert("What's behind this button? A treasure trove of softball secrets? A portal to a parallel universe where softball is the national sport? Or maybe just a really, really good story about our camp? Well, you'll have to wait to find out! Stay tuned, slugger! 🌟⚾");
-  };
-
   const handlePayNowClick = () => {
     alert("Buy Now? Oh, you're eager! Unfortunately, this feature is not available yet. Stay tuned for exciting updates! 💸");
   };
@@ -79,12 +75,12 @@ export default function Index() {
                       >
                         Pay Now
                       </button>
-                      <button
-                        onClick={handleAboutClick}
+                      <Link
+                        to="/about"
                         className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600"
                       >
                         About
-                      </button>
+                      </Link>
                       <Link
                         to="/instructors"
                         className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600"
