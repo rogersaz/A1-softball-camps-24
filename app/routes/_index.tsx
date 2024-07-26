@@ -44,7 +44,7 @@ export default function Index() {
                   <span className="block uppercase text-3xl drop-shadow-md">
                     <span className="block text-blue-200">Join us on</span>
                     <span className="block text-blue-400">Mon Aug 5th 2024</span>
-                    <span className="block text-blue-600">from 7pm - 9pm</span>
+                    <span className="block text-blue-600">from 6pm - 9pm</span>
                   </span>
                 </h1>
 

@@ -72,6 +72,11 @@ export default function Index() {
                     Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
                   </p>
 
+                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
+                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
+                    Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
+                  </p>
+
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-red-500 drop-shadow-md">
                       Jaeden Murphy <br /> University of Kansas
