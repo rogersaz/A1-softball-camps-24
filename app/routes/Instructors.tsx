@@ -5,23 +5,15 @@ import { Helmet } from "react-helmet"; // Import Helmet if not already
 export default function Index() {
   const user = useOptionalUser();
 
-  const handlePayNowClick = () => {
-    alert("Buy Now? Oh, you're eager! Unfortunately, this feature is not available yet. Stay tuned for exciting updates! 💸");
-  };
-
-  const handleInstructionsClick = () => {
-    alert("Instructors? They're on the way! Stay tuned! 📝😜");
-  };
-
   return (
     <>
       <Helmet>
         <title>A1 Softball Camps</title>
-        <meta name="description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta name="description" content="Join The Wildcat Summer Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
         <meta name="keywords" content="softball camps, A1 softball, Louisiana Tech, softball training, softball clinics, softball skills, sports camps, youth sports, Surprise AZ, Willow Canyon" />
-        <meta name="author" content="A1 Softball Camps" />
-        <meta property="og:title" content="A1 Softball Camps" />
-        <meta property="og:description" content="Join A1 Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
+        <meta name="author" content="Wildcat Summer Softball Camps" />
+        <meta property="og:title" content="Wildcat Summer Softball Camp 2024" />
+        <meta property="og:description" content="Join The Wildcat Summer Softball Camps for the ultimate softball experience! Improve your skills, have fun, and make new friends. Sign up now!" />
         <meta property="og:image" content="/softball-stack.jpg" />
         <meta property="og:url" content="https://www.a1softballcamps.com" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -117,7 +109,7 @@ export default function Index() {
                   </p>
                 </div>
 
-                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
+                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4 flex-wrap">
                   {user ? (
                     <Link
                       to="/notes"
@@ -126,39 +118,39 @@ export default function Index() {
                       View Notes for {user.email}
                     </Link>
                   ) : (
-                    <div className="space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
+                    <>
                       <Link
                         to="https://www.a1softballcamps.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
                       >
                         Sign up
                       </Link>
-                      <button
-                        onClick={handlePayNowClick}
+                      <Link
+                        to="/payment"
                         className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600"
                       >
                         Pay Now
-                      </button>
+                      </Link>
                       <Link
                         to="/about"
                         className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600"
                       >
                         About
                       </Link>
-                      <button
-                        onClick={handleInstructionsClick}
+                      <Link
+                        to="/instructors"
                         className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600"
                       >
                         Instructors
-                      </button>
-                    </div>
+                      </Link>
+                    </>
                   )}
                 </div>
 
                 <div className="mt-10 flex justify-center">
                   <Link
                     to="https://www.a1softballcamps.com"
-                    className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 text-base font-medium text-white hover:bg-blue-600"
+                    className="flex items-center justify-center rounded-md bg-purple-500 px-4 py-3 text-base font-medium text-white hover:bg-purple-600"
                   >
                     Home
                   </Link>

@@ -5,10 +5,6 @@ import { Helmet } from "react-helmet";
 export default function Index() {
   const user = useOptionalUser();
 
-  const handlePayNowClick = () => {
-    alert("Buy Now? Oh, you're eager! Unfortunately, this feature is not available yet. Stay tuned for exciting updates! 💸");
-  };
-
   return (
     <>
       <Helmet>
@@ -53,7 +49,7 @@ export default function Index() {
                 <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
                 </p>
 
-                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center space-x-4">
+                <div className="mx-auto mt-10 max-w-sm flex flex-wrap justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                   {user ? (
                     <Link
                       to="/notes"
@@ -62,19 +58,19 @@ export default function Index() {
                       View Notes for {user.email}
                     </Link>
                   ) : (
-                    <div className="space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
+                    <>
                       <Link
                         to="https://www.a1softballcamps.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
                       >
                         Sign up
                       </Link>
-                      <button
-                        onClick={handlePayNowClick}
+                      <Link
+                        to="/payment"
                         className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600"
                       >
                         Pay Now
-                      </button>
+                      </Link>
                       <Link
                         to="/about"
                         className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600"
@@ -87,7 +83,7 @@ export default function Index() {
                       >
                         Instructors
                       </Link>
-                    </div>
+                    </>
                   )}
                 </div>
                 
