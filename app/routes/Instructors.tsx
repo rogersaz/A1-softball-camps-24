@@ -70,15 +70,25 @@ export default function Index() {
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
                   </p>
-                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
+                  <p className="mx-auto mt-6 max-w-lg text-left text-xl text-black sm:max-w-3xl">
                     Before BYU
-                    • Two-time Arizona 5A state champion
-                    • MVP of 2021 state championship game
-                    • Three-time All-Region (2020, 2021 and 2022)
-                    • Wrestled for a year in high school
-                    • Top 5% of 2022 graduating class
-                    2023 • All-WCC Second Team • WCC Player of the Week (5/8) • Batted .345 on the season with 20 hits, 15 RBI, three home runs, three doubles, a triple and a stolen base • Posted a .586 slugging percentage and .397 on-base percentage • Sent out a trio of home runs in a doubleheader against Pacific, including a grand slam in game one and a walk-off three-run homer in game two (5/5) • Played in 25 of the Cougars’ 52 games, starting 19 of them
-                    2024 • Spring Academic All-Big 12 First Team • Played in 24 games during the 2024 season, starting nine of them • Hit .194 on the year with seven runs scored, six hits and two RBI • Went 5-for-5 in stolen bases, finishing with a .226 slugging percentage, .306 on-base percentage and .906 fielding percentage
+                    <ul className="list-disc list-inside">
+                      <li>Two-time Arizona 5A state champion</li>
+                      <li>MVP of 2021 state championship game</li>
+                      <li>Three-time All-Region (2020, 2021 and 2022)</li>
+                      <li>Wrestled for a year in high school</li>
+                      <li>Top 5% of 2022 graduating class</li>
+                      <li>All-WCC Second Team</li>
+                      <li>WCC Player of the Week (5/8)</li>
+                      <li>Batted .345 on the season with 20 hits, 15 RBI, three home runs, three doubles, a triple and a stolen base</li>
+                      <li>Posted a .586 slugging percentage and .397 on-base percentage</li>
+                      <li>Sent out a trio of home runs in a doubleheader against Pacific, including a grand slam in game one and a walk-off three-run homer in game two (5/5)</li>
+                      <li>Played in 25 of the Cougars’ 52 games, starting 19 of them</li>
+                      <li>Spring Academic All-Big 12 First Team</li>
+                      <li>Played in 24 games during the 2024 season, starting nine of them</li>
+                      <li>Hit .194 on the year with seven runs scored, six hits and two RBI</li>
+                      <li>Went 5-for-5 in stolen bases, finishing with a .226 slugging percentage, .306 on-base percentage and .906 fielding percentage</li>
+                    </ul>
                   </p>
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
@@ -95,7 +105,7 @@ export default function Index() {
                       Marissa McCann <br /> University of Missouri Tigers
                     </span>
                   </h1>
-                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
+                  <p className="mx-auto mt-6 max-w-lg text-left text-xl text-black sm:max-w-3xl">
                     SEC Freshman of the Week (4/2/24 & 3/26/24)
                     <br /> 2023-24 SEC First-Year Honor Roll
                     <br /> <strong>PREP</strong>
@@ -172,4 +182,5 @@ export default function Index() {
     </>
   );
 }
+
 
