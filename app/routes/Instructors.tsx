@@ -78,12 +78,14 @@ export default function Index() {
                       <li>Three-time All-Region (2020, 2021 and 2022)</li>
                       <li>Wrestled for a year in high school</li>
                       <li>Top 5% of 2022 graduating class</li>
+                      <h2>School Year 2023</h2>
                       <li>All-WCC Second Team</li>
                       <li>WCC Player of the Week (5/8)</li>
                       <li>Batted .345 on the season with 20 hits, 15 RBI, three home runs, three doubles, a triple and a stolen base</li>
                       <li>Posted a .586 slugging percentage and .397 on-base percentage</li>
                       <li>Sent out a trio of home runs in a doubleheader against Pacific, including a grand slam in game one and a walk-off three-run homer in game two (5/5)</li>
                       <li>Played in 25 of the Cougars’ 52 games, starting 19 of them</li>
+                      <h2>School Year 2024</h2>
                       <li>Spring Academic All-Big 12 First Team</li>
                       <li>Played in 24 games during the 2024 season, starting nine of them</li>
                       <li>Hit .194 on the year with seven runs scored, six hits and two RBI</li>
