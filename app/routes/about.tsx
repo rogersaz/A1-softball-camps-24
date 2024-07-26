@@ -49,7 +49,7 @@ export default function About() {
                     Camp Details
                   </h2>
                   <ul className="mt-4 max-w-lg mx-auto text-left text-xl text-black sm:max-w-3xl list-disc list-inside">
-                    <li>Date: Aug 5, 2024 - 7pm - 9pm</li>
+                    <li>Date: Aug 5, 2024 - 6pm - 9pm</li>
                     <li className="mt-2">Location: Willow Canyon High School</li>
                     <li className="mt-2">Ages: Open to players aged 8-16 years old.</li>
                     <li className="mt-2">Cost: The camp fee is $50 per player.</li>
