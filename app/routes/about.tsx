@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"; // Import Helmet if not already
 
 export default function About() {
   return (
@@ -49,26 +49,31 @@ export default function About() {
                     Camp Details
                   </h2>
                   <ul className="mt-4 max-w-lg mx-auto text-left text-xl text-black sm:max-w-3xl list-disc list-inside">
-                    <li>Date: Aug 5, 2024 - 6pm - 9pm</li>
+                    <li>Date: Aug 5, 2024 - 7pm - 9pm</li>
                     <li className="mt-2">Location: Willow Canyon High School</li>
                     <li className="mt-2">Ages: Open to players aged 8-16 years old.</li>
                     <li className="mt-2">Cost: The camp fee is $50 per player.</li>
                   </ul>
 
                   <h2 className="text-center text-3xl font-bold tracking-tight mt-8 text-gray-900">
-                    How to Register
+                    Payment Options
                   </h2>
                   <p className="mt-4 max-w-lg mx-auto text-center text-xl text-black sm:max-w-3xl">
-                    To register for the Wildcat Summer Softball Camp, please visit our registration page and complete the online form. Early registration is encouraged as spots are limited. If you have any questions or need additional information, please contact us at <a href="mailto:a1softball12771@gmail.com" className="text-blue-500 underline">a1softball12771@gmail.com</a>.
+                    We offer three different ways to pay for the camp:
                   </p>
-                  <div className="mt-4 flex justify-center">
-                    <Link
-                      to="https://www.a1softballcamps.com/signup"
-                      className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600"
-                    >
-                      Register Now
-                    </Link>
-                  </div>
+                  <ul className="mt-4 max-w-lg mx-auto text-left text-xl text-black sm:max-w-3xl list-disc list-inside">
+                    <li>CASH: Pay when you arrive at the camp.</li>
+                    <li className="mt-2">
+                      CREDIT CARD or VENMO: Visit our <Link to="/payment" className="text-blue-500 underline">PAYMENT page</Link> to pay with a credit card or Venmo. Please note that each of these options includes a small fee of $3.00.
+                    </li>
+                  </ul>
+
+                  <h2 className="text-center text-3xl font-bold tracking-tight mt-8 text-gray-900">
+                    Rain Out Date
+                  </h2>
+                  <p className="mt-4 max-w-lg mx-auto text-center text-xl text-black sm:max-w-3xl">
+                    We know it's Surprise, AZ, and we get very little rain, but it is monsoon season. Our rain out date will be Aug 6, 2024, from 6pm - 9pm.
+                  </p>
 
                   <h2 className="text-center text-3xl font-bold tracking-tight mt-8 text-gray-900">
                     Join us for an unforgettable week of softball, fun, and friendships at Wildcat Summer Softball Camp. We look forward to seeing you on the field!
@@ -145,3 +150,4 @@ export default function About() {
     </>
   );
 }
+
