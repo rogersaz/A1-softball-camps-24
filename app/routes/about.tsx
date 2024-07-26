@@ -20,7 +20,7 @@ export default function About() {
                   src="/path-to-your-image.jpg"
                   alt="Wildcat Summer Softball Camp"
                 />
-                <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
+                <div className="absolute inset-0 bg-[color:rgba(0,0,255,0.5)] mix-blend-multiply" />
               </div>
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
