@@ -49,11 +49,11 @@ export default function Index() {
                 <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
                 </p>
 
-                <div className="mx-auto mt-10 max-w-sm flex flex-wrap justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
                   {user ? (
                     <Link
                       to="/notes"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
                     >
                       View Notes for {user.email}
                     </Link>
@@ -61,25 +61,25 @@ export default function Index() {
                     <>
                       <Link
                         to="https://www.a1softballcamps.com/signup"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
                       >
                         Sign up
                       </Link>
                       <Link
                         to="/payment"
-                        className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600"
+                        className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600 w-full sm:w-auto"
                       >
                         Pay Now
                       </Link>
                       <Link
                         to="/about"
-                        className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600"
+                        className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600 w-full sm:w-auto"
                       >
                         About
                       </Link>
                       <Link
                         to="/instructors"
-                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600"
+                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600 w-full sm:w-auto"
                       >
                         Instructors
                       </Link>
