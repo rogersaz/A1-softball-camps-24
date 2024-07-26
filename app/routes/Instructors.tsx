@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"; // Import Helmet if not already
 
 export default function Index() {
   const user = useOptionalUser();
-  
+
   const handleAboutClick = () => {
     alert("What's behind this button? A treasure trove of softball secrets? A portal to a parallel universe where softball is the national sport? Or maybe just a really, really good story about our camp? Well, you'll have to wait to find out! Stay tuned, slugger! 🌟⚾");
   };
@@ -49,7 +49,6 @@ export default function Index() {
                       A1 <br /> Louisiana Tech University
                     </span>
                   </h1>
-
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     2024 (SOPHOMORE): Appeared in 50 games while starting 48 games primarily in right field … Batted .278 with 42 hits, nine doubles, one home run and 23 RBI … Posted a .986 fielding percentage with 55 putouts, two assists and one error … Ended season on a four-game hitting streak and six-game reached-base streak … Tied for the team-lead with seven multi-RBI games … Registered 10 multi-hit games which ranked fourth on the team … Drove in a career-high four RBI and hit her first collegiate home run with a three-run shot in the bottom of the third inning in a 5-3 win over UL-Lafayette (March 20), the Bulldogs first over the Ragin' Cajuns since April 25, 1998 … Went 2-3 with three RBI and three walks during a 28-2 win over Lindenwood (Feb. 17) … Drove in three runs while going 3-7 in a 5-3 loss at Ole Miss (4/16) … Recorded outfield assists against Sam Houston (March 9) and FIU (May 3) … Recorded a season-high three hits on three separate occasions (Missouri State Feb. 24, Illinois March 2, Ole Miss April 16) … Recorded first career stolen base during a 5-1 win over Sam Houston (3/9) … Helped LA Tech clinch a series victory at Jax State after going 2-4 with a run scored in a 8-3 series finale win (April 14)
                   </p>
@@ -71,10 +70,15 @@ export default function Index() {
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
                   </p>
-
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
-                  <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
-                    Two-time Arizona 5A state champion ... MVP of 2021 state championship game ... Three-time All-Region (2020, 2021 and 2022) ... Wrestled for a year in high school ... Top 5% of 2022 graduating class
+                    Before BYU
+                    • Two-time Arizona 5A state champion
+                    • MVP of 2021 state championship game
+                    • Three-time All-Region (2020, 2021 and 2022)
+                    • Wrestled for a year in high school
+                    • Top 5% of 2022 graduating class
+                    2023 • All-WCC Second Team • WCC Player of the Week (5/8) • Batted .345 on the season with 20 hits, 15 RBI, three home runs, three doubles, a triple and a stolen base • Posted a .586 slugging percentage and .397 on-base percentage • Sent out a trio of home runs in a doubleheader against Pacific, including a grand slam in game one and a walk-off three-run homer in game two (5/5) • Played in 25 of the Cougars’ 52 games, starting 19 of them
+                    2024 • Spring Academic All-Big 12 First Team • Played in 24 games during the 2024 season, starting nine of them • Hit .194 on the year with seven runs scored, six hits and two RBI • Went 5-for-5 in stolen bases, finishing with a .226 slugging percentage, .306 on-base percentage and .906 fielding percentage
                   </p>
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
@@ -88,11 +92,9 @@ export default function Index() {
 
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-red-500 drop-shadow-md">
-                    Marissa McCann <br /> University of Missouri Tigers
+                      Marissa McCann <br /> University of Missouri Tigers
                     </span>
                   </h1>
-
-              
                   <p className="mx-auto mt-6 max-w-lg text-center text-xl text-black sm:max-w-3xl">
                     SEC Freshman of the Week (4/2/24 & 3/26/24)
                     <br /> 2023-24 SEC First-Year Honor Roll
@@ -161,13 +163,13 @@ export default function Index() {
                     Home
                   </Link>
                 </div>
-                
+
               </div>
             </div>
           </div>
-            
         </div>
       </main>
     </>
   );
 }
+
