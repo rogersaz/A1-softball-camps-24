@@ -53,7 +53,7 @@ export default function Index() {
                   {user ? (
                     <Link
                       to="/notes"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto ease-in duration-300"
                     >
                       View Notes for {user.email}
                     </Link>
@@ -61,7 +61,7 @@ export default function Index() {
                     <>
                       <Link
                         to="https://www.wildcatssc24.com/signup"
-                        className="relative flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
+                        className="relative flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto ease-in duration-300"
                       >
                         <span className="relative flex h-3 w-3 mr-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
@@ -71,19 +71,19 @@ export default function Index() {
                       </Link>
                       <Link
                         to="/payment"
-                        className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600 w-full sm:w-auto"
+                        className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600 w-full sm:w-auto ease-in duration-300"
                       >
                         Pay Now
                       </Link>
                       <Link
                         to="/about"
-                        className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600 w-full sm:w-auto"
+                        className="flex items-center justify-center rounded-md bg-green-500 px-4 py-3 text-base font-medium text-white hover:bg-green-600 w-full sm:w-auto ease-in duration-300"
                       >
                         About
                       </Link>
                       <Link
                         to="/instructors"
-                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600 w-full sm:w-auto"
+                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600 w-full sm:w-auto ease-in duration-300"
                       >
                         Instructors
                       </Link>
