@@ -92,7 +92,7 @@ export default function About() {
                   <div className="mt-4 flex justify-center">
                     <Link
                       to="/instructors"
-                      className="inline-flex items-center justify-center rounded-md bg-yellow-500 px-4 py-2 text-base font-medium text-white hover:bg-yellow-600"
+                      className="inline-flex items-center justify-center rounded-md bg-yellow-500 px-4 py-2 text-base font-medium text-white hover:bg-yellow-600 ease-in duration-300"
                     >
                       Meet Our Instructors
                     </Link>
@@ -118,25 +118,29 @@ export default function About() {
                   <div className="mt-8 flex justify-center space-x-4">
                     <Link
                       to="https://www.wildcatssc24.com/signup"
-                      className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50"
+                      className="relative inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50 ease-in duration-300"
                     >
+                      <span className="relative flex h-3 w-3 mr-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                      </span>
                       Sign Up
                     </Link>
                     <Link
                       to="/about"
-                      className="inline-flex items-center justify-center rounded-md bg-green-500 px-4 py-2 text-base font-medium text-white hover:bg-green-600"
+                      className="inline-flex items-center justify-center rounded-md bg-green-500 px-4 py-2 text-base font-medium text-white hover:bg-green-600 ease-in duration-300"
                     >
                       About
                     </Link>
                     <Link
                       to="/instructors"
-                      className="inline-flex items-center justify-center rounded-md bg-yellow-500 px-4 py-2 text-base font-medium text-white hover:bg-yellow-600"
+                      className="inline-flex items-center justify-center rounded-md bg-yellow-500 px-4 py-2 text-base font-medium text-white hover:bg-yellow-600 ease-in duration-300"
                     >
                       Instructors
                     </Link>
                     <Link
                       to="https://www.wildcatssc24.com"
-                      className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600"
+                      className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600 ease-in duration-300"
                     >
                       Home
                     </Link>
