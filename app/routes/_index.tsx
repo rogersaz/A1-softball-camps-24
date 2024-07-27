@@ -9,7 +9,7 @@ export default function Index() {
     <>
       <Helmet>
         <title>Wildcat Summer Softball Camp 2024</title>
-        <meta name="description" content="Join A1 and friends for Wildcat Summer Softball Camp 2024 - Surprise AZ 2024 the ultimate softball experience! Improve your skills. Sign up now!" />
+        <meta name="description" content="Join Wildcat Summer Softball Camp 2024 - Surprise AZ 2024 the ultimate softball experience! Improve your skills. Sign up now!" />
         <meta name="keywords" content="softball camps, A1 softball, softball training, Surprise AZ., youth softball, sports camps, softball skills, softball clinics" />
         <meta name="author" content="A1 Softball Camps" />
         <meta property="og:title" content="Wildcat Summer Softball Camp 2024" />
@@ -41,7 +41,7 @@ export default function Index() {
                 </h1>
 
                 <img
-                  className="mx-auto mt-6 max-w-lg object-contain sm:max-w-3xl"
+                  className="mx-auto mt-6 max-w-lg object-contain sm:max-w-3xl rounded-[10px]"
                   src="/wildcat-A1-camp.jpg"
                   alt="Wildcat Summer Softball Camp 2024"
                 />
