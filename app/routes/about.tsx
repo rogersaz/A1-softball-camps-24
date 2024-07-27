@@ -27,7 +27,7 @@ export default function About() {
                     Our Mission
                   </h2>
                   <p className="mt-4 max-w-lg mx-auto text-center text-xl text-black sm:max-w-3xl">
-                    At Wildcat Summer Softball Camp, our mission is to inspire and nurture the love of softball in each participant. We strive to create a positive and encouraging atmosphere where players can grow both on and off the field. Our dedicated coaching staff is committed to helping each player reach their full potential by focusing on skill development, teamwork, and sportsmanship.
+                    At Wildcat Summer Softball Camp, our mission is to inspire and nurture the love of softball in each participant. We strive to create a positive and encouraging atmosphere where players can grow both on and off the field. Our college players are committed to helping each player reach their full potential by focusing on skill development, teamwork, and sportsmanship.
                   </p>
 
                   <h2 className="text-center text-3xl font-bold tracking-tight mt-8 text-gray-900">
