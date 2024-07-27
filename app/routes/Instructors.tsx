@@ -120,7 +120,7 @@ export default function Index() {
                   ) : (
                     <>
                       <Link
-                        to="https://www.wildcatssc.com/signup"
+                        to="https://www.wildcatssc24.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8"
                       >
                         Sign up
@@ -149,7 +149,7 @@ export default function Index() {
 
                 <div className="mt-10 flex justify-center">
                   <Link
-                    to="https://www.wildcatssc.com"
+                    to="https://www.wildcatssc24.com"
                     className="flex items-center justify-center rounded-md bg-purple-500 px-4 py-3 text-base font-medium text-white hover:bg-purple-600"
                   >
                     Home

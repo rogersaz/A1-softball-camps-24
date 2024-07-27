@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { Helmet } from "react-helmet"; // Import Helmet if not already
+import { Helmet } from "react-helmet";
 
 export default function About() {
   return (
@@ -117,7 +117,7 @@ export default function About() {
 
                   <div className="mt-8 flex justify-center space-x-4">
                     <Link
-                      to="https://www.wildcatssc.com/signup"
+                      to="https://www.wildcatssc24.com/signup"
                       className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50"
                     >
                       Sign Up
@@ -135,7 +135,7 @@ export default function About() {
                       Instructors
                     </Link>
                     <Link
-                      to="https://www.wildcatssc.com"
+                      to="https://www.wildcatssc24.com"
                       className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600"
                     >
                       Home

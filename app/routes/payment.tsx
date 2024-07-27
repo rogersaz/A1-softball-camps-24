@@ -67,7 +67,7 @@ export default function Payment() {
 
                   <div className="mt-8 flex justify-center space-x-4">
                     <Link
-                      to="https://www.a1softballcamps.com/signup"
+                      to="https://www.wildcatssc24.com/signup"
                       className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50"
                     >
                       Sign Up
@@ -85,7 +85,7 @@ export default function Payment() {
                       Instructors
                     </Link>
                     <Link
-                      to="https://www.a1softballcamps.com"
+                      to="https://www.wildcatssc24.com"
                       className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600"
                     >
                       Home

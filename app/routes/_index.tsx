@@ -60,7 +60,7 @@ export default function Index() {
                   ) : (
                     <>
                       <Link
-                        to="https://www.wildcatssc.com/signup"
+                        to="https://www.wildcatssc24.com/signup"
                         className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
                       >
                         Sign up
