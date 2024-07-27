@@ -149,7 +149,7 @@ export default function Index() {
                       </Link>
                     </>
                   )}
-                </div>
+                
 
                 
                   <Link
