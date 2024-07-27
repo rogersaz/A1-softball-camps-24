@@ -137,7 +137,7 @@ export default function Signup() {
 
         <div className="mt-6 flex justify-center">
           <a 
-            href="/"  // Adjust the href to your homepage
+            href="https://wildcatssc24.com/"  
             className="flex items-center justify-center rounded-md bg-gray-500 px-4 py-3 font-medium text-white hover:bg-gray-600 transition-colors duration-300 font-montserrat"
           >
             HOME
