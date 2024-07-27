@@ -151,7 +151,7 @@ export default function Index() {
                   )}
                 </div>
 
-                <div className="mt-10 flex justify-center">
+                
                   <Link
                     to="https://www.wildcatssc24.com"
                     className="flex items-center justify-center rounded-md bg-purple-500 px-4 py-3 text-base font-medium text-white hover:bg-purple-600 transition duration-150 ease-in-out"
