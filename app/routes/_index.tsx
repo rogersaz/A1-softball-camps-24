@@ -61,7 +61,7 @@ export default function Index() {
                     <>
                       <Link
                         to="https://www.wildcatssc24.com/signup"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 w-full sm:w-auto"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-yellow-500 px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-yellow-600 w-full sm:w-auto animate-ping"
                       >
                         Sign up
                       </Link>
@@ -79,7 +79,7 @@ export default function Index() {
                       </Link>
                       <Link
                         to="/instructors"
-                        className="flex items-center justify-center rounded-md bg-yellow-500 px-4 py-3 text-base font-medium text-white hover:bg-yellow-600 w-full sm:w-auto"
+                        className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 text-base font-medium text-white hover:bg-blue-600 w-full sm:w-auto"
                       >
                         Instructors
                       </Link>
@@ -96,3 +96,4 @@ export default function Index() {
     </>
   );
 }
+
