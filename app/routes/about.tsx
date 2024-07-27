@@ -115,7 +115,7 @@ export default function About() {
                     Wildcat Summer Softball Camp – Where Skills and Friendships are Made!
                   </p>
 
-                  <div className="mt-8 flex justify-center space-x-4">
+                  <div className="mt-8 flex justify-center space-x-4 flex-wrap">
                     <Link
                       to="https://www.wildcatssc24.com/signup"
                       className="relative inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50 ease-in duration-300"
@@ -143,6 +143,12 @@ export default function About() {
                       className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600 ease-in duration-300"
                     >
                       Home
+                    </Link>
+                    <Link
+                      to="/payment"
+                      className="inline-flex items-center justify-center rounded-md bg-red-500 px-4 py-2 text-base font-medium text-white hover:bg-red-600 ease-in duration-300"
+                    >
+                      Pay Now
                     </Link>
                   </div>
                 </div>
