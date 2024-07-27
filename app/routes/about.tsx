@@ -35,10 +35,10 @@ export default function About() {
                   </h2>
                   <ul className="mt-4 max-w-lg mx-auto text-left text-xl text-black sm:max-w-3xl list-disc list-inside">
                     <li>
-                      <strong>Skill Development:</strong> Our experienced coaches will provide instruction on all aspects of the game, including hitting, pitching, fielding, and base running. We use drills and game situations to help players improve their skills and gain confidence.
+                      <strong>Skill Development:</strong> Our experienced college players will provide instruction on all aspects of the game, including hitting, pitching, fielding, and base running. We use drills and game situations to help players improve their skills and gain confidence.
                     </li>
                     <li className="mt-2">
-                      <strong>Team Building:</strong> Softball is a team sport, and we emphasize the importance of teamwork and communication. Campers will participate in team-building activities and scrimmages to enhance their understanding of the game.
+                      <strong>Team Building:</strong> Softball is a team sport, and we emphasize the importance of teamwork and communication. Players will participate in team-building activities and scrimmages to enhance their understanding of the game.
                     </li>
                     <li className="mt-2">
                       <strong>Fun Activities:</strong> While skill development is our focus, we also ensure that our campers have a great time. Our camp includes various fun activities and games to keep the atmosphere light and enjoyable.
