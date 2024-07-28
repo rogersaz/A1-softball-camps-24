@@ -9,7 +9,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Signup() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (data) => {
@@ -35,6 +35,9 @@ export default function Signup() {
 
       console.log('Supabase response:', supabaseData);
       alert('Signup Successful! 🎉 Congratulations, slugger! You\'ve officially stepped up to the plate. Get ready to knock it out of the park at the Wildcat Summer Camp! See you on the field! 🌟⚾');
+      
+      // Reset the form after successful submission
+      reset();
     } catch (error) {
       console.error('Error:', error);
       alert(`Error submitting signup: 😱 Uh-oh! Looks like our softball flew out of the park and hit the wrong button. Please check your form and try again. Don't worry, we'll catch it this time! 🥎🔄: ${error.message}`);
