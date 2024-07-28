@@ -23,7 +23,7 @@ export default function Signup() {
           address: data.address,
           phone: data.phone,
           email: data.email,
-          playingPositions: data.playingPositions,
+          playingPositions: data.playingPositions.join(', '),
           age: data.age,
           experienceLevel: data.experienceLevel
         }]);
@@ -109,23 +109,33 @@ export default function Signup() {
           </div>
           <div className="col-span-2 md:col-span-1">
             <label className="block mb-2">Experience Level</label>
-            <input 
-              type="text" 
+            <select 
               {...register("experienceLevel", { required: true })} 
               className="w-full px-3 py-2 border rounded-md"
-              placeholder="Enter your experience level" 
-            />
+            >
+              <option value="">Select</option>
+              <option value="0-1yr">0-1yr</option>
+              <option value="1yr-3yr">1yr-3yr</option>
+              <option value="3yr+">3yr+</option>
+            </select>
           </div>
         </div>
 
         <div className="mt-4">
-          <label className="block mb-2">Favorite Softball Position:</label>
-          <input 
-            type="text" 
+          <label className="block mb-2">Favorite Softball Positions (Select multiple with Ctrl/Cmd):</label>
+          <select 
             {...register("playingPositions", { required: true })} 
+            multiple
             className="w-full px-3 py-2 border rounded-md"
-            placeholder="Enter positions" 
-          />
+          >
+            <option value="Pitcher">Pitcher</option>
+            <option value="Catcher">Catcher</option>
+            <option value="1st Base">1st Base</option>
+            <option value="2nd Base">2nd Base</option>
+            <option value="3rd Base">3rd Base</option>
+            <option value="ShortStop">ShortStop</option>
+            <option value="Outfield">Outfield</option>
+          </select>
         </div>
 
         <div className="mt-6 flex justify-center">
