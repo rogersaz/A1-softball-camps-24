@@ -24,6 +24,21 @@ export default function Index() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                    <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
+                    <div className="px-6 py-4">
+                      <div className="font-bold text-xl mb-2">Instructors</div>
+                      <p className="text-gray-700 text-base">
+                        Meet our highly skilled and experienced instructors dedicated to helping you improve your softball skills.
+                      </p>
+                    </div>
+                    <div className="px-6 pt-4 pb-2">
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#softball</span>
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#training</span>
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#skills</span>
+                    </div>
+                  </div>
+
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-4xl lg:text-6xl">
                     <span className="block uppercase text-red-500 drop-shadow-md">
                       A1 <br /> Louisiana Tech University
@@ -149,9 +164,6 @@ export default function Index() {
                       </Link>
                     </>
                   )}
-                
-
-                
                   <Link
                     to="https://www.wildcatssc24.com"
                     className="flex items-center justify-center rounded-md bg-purple-500 px-4 py-3 text-base font-medium text-white hover:bg-purple-600 transition duration-150 ease-in-out"
@@ -159,7 +171,6 @@ export default function Index() {
                     Home
                   </Link>
                 </div>
-
               </div>
             </div>
           </div>
@@ -168,5 +179,4 @@ export default function Index() {
     </>
   );
 }
-
 
