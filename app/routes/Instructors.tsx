@@ -25,7 +25,7 @@ export default function Index() {
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
                   
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-red-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">A1 - Louisiana Tech University</div>
@@ -40,7 +40,7 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-green-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">Trinity Kennemer - South Dakota State</div>
@@ -50,12 +50,12 @@ export default function Index() {
                     </div>
                     <div className="px-6 pt-4 pb-2">
                       <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">@SDCoyotesSB</span>
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#1stBase</span>
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#1stB</span>
                       <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Wildcatssc</span>
                     </div>
                   </div>
 
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-blue-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">Tristen Turlington - BYU</div>
@@ -82,12 +82,12 @@ export default function Index() {
                     </div>
                     <div className="px-6 pt-4 pb-2">
                       <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">@softballBYU</span>
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#training</span>
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#infield</span>
                       <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#skills</span>
                     </div>
                   </div>
 
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-yellow-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">Jaeden Murphy - University of Kansas</div>
@@ -102,7 +102,7 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+                  <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-purple-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">Marissa McCann - University of Missouri Tigers</div>
