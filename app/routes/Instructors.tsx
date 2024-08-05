@@ -1,9 +1,19 @@
 import { Link } from "@remix-run/react";
 import { useOptionalUser } from "~/utils";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 export default function Index() {
   const user = useOptionalUser();
+  const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
+
+  const showErrorPopup = () => {
+    setIsErrorPopupVisible(true);
+  };
+
+  const closeErrorPopup = () => {
+    setIsErrorPopupVisible(false);
+  };
 
   return (
     <>
@@ -24,7 +34,20 @@ export default function Index() {
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
               <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
                 <div className="bg-white bg-opacity-50 p-8 rounded-md">
-                  
+
+                  {/* Error Popup */}
+                  {isErrorPopupVisible && (
+                    <div className="fixed inset-0 flex items-center justify-center z-50">
+                      <div className="absolute inset-0 bg-black opacity-50" onClick={closeErrorPopup}></div>
+                      <div className="bg-white p-8 rounded-md border-2 border-red-600 z-50">
+                        <p>We are sorry but our Dugout is full.</p>
+                        <p>QUESTIONS? EMAIL A1 at <a href="mailto:a1softball12771@gmail.com">a1softball12771@gmail.com</a></p>
+                        <button onClick={closeErrorPopup} className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md">Close</button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Content */}
                   <div className="max-w-sm rounded overflow-hidden shadow-lg mb-8 bg-red-100">
                     <img className="w-full" src="/wildcatssc24-logo.png" alt="Wildcat Summer Softball Camps Logo" />
                     <div className="px-6 py-4">
@@ -143,8 +166,8 @@ export default function Index() {
                       </Link>
                     ) : (
                       <>
-                        <Link
-                          to="https://www.wildcatssc24.com/signup"
+                        <button
+                          onClick={showErrorPopup}
                           className="relative flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-violet-700 shadow-sm hover:bg-violet-50 sm:px-8 transition duration-150 ease-in-out"
                         >
                           <span className="relative flex h-3 w-3 mr-2">
@@ -152,7 +175,7 @@ export default function Index() {
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
                           </span>
                           Sign up
-                        </Link>
+                        </button>
                         <Link
                           to="/payment"
                           className="flex items-center justify-center rounded-md bg-red-500 px-4 py-3 font-medium text-white hover:bg-red-600 transition duration-150 ease-in-out"
