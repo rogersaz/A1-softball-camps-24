@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "~/utils/supabaseClient";
+import { createClient } from "@supabase/supabase-js";
 const ReviewPage = () => {
   const [formData, setFormData] = useState({
     overallExperience: "",
