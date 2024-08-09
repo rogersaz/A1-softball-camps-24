@@ -101,7 +101,14 @@ export default function Review() {
                         step="1"
                         defaultValue="0"
                         onChange={handleSliderChange}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                        style={{
+                          backgroundImage: `url('/Softball-Slider-Icon.png')`,
+                          backgroundSize: 'cover',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundPosition: 'center',
+                          height: '50px', // Adjust as needed to match your icon size
+                        }}
                       />
                       <div className="flex justify-between text-sm mt-2">
                         <span>Single</span>
