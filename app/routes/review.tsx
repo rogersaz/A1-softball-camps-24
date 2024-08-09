@@ -26,6 +26,15 @@ export default function Review() {
     setIsErrorPopupVisible(false);
   };
 
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    let overallExperience = 'Single';
+    if (value === '1') overallExperience = 'Double';
+    if (value === '2') overallExperience = 'Triple';
+    if (value === '3') overallExperience = 'Homerun';
+    setFormData({ ...formData, overallExperience });
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -83,18 +92,23 @@ export default function Review() {
                       <label htmlFor="overallExperience" className="block text-sm font-medium text-black">
                         Overall Experience
                       </label>
-                      <select
+                      <input
+                        type="range"
                         id="overallExperience"
                         name="overallExperience"
-                        value={formData.overallExperience}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      >
-                        <option value="Single">Single</option>
-                        <option value="Double">Double</option>
-                        <option value="Triple">Triple</option>
-                        <option value="Homerun">Homerun</option>
-                      </select>
+                        min="0"
+                        max="3"
+                        step="1"
+                        defaultValue="0"
+                        onChange={handleSliderChange}
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                      />
+                      <div className="flex justify-between text-sm mt-2">
+                        <span>Single</span>
+                        <span>Double</span>
+                        <span>Triple</span>
+                        <span>Homerun</span>
+                      </div>
                     </div>
 
                     <div>
