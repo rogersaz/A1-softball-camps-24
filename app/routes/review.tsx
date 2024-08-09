@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../utils/supabaseClient";
 
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
@@ -101,7 +101,7 @@ export default function Review() {
                         step="1"
                         defaultValue="0"
                         onChange={handleSliderChange}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer custom-slider-thumb"
                       />
                       <div className="flex justify-between text-sm mt-2">
                         <span>Single</span>
