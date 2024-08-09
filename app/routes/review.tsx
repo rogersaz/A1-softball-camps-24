@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
-import { supabase } from "../utils/supabaseClient";
+import { createClient } from "@supabase/supabase-js";
 
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
