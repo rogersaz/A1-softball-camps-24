@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
   const [formData, setFormData] = useState({
-    overallExperience: '',
+    overallExperience: 'Single', // Default to 'Single'
     drillsAndExercises: '',
     coachingStaff: '',
     instruction: '',
@@ -26,7 +26,7 @@ export default function Review() {
     setIsErrorPopupVisible(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -43,7 +43,7 @@ export default function Review() {
     } else {
       console.log('Review submitted successfully:', data);
       setFormData({
-        overallExperience: '',
+        overallExperience: 'Single',
         drillsAndExercises: '',
         coachingStaff: '',
         instruction: '',
@@ -83,16 +83,20 @@ export default function Review() {
                       <label htmlFor="overallExperience" className="block text-sm font-medium text-black">
                         Overall Experience
                       </label>
-                      <input
-                        type="text"
+                      <select
                         id="overallExperience"
                         name="overallExperience"
                         value={formData.overallExperience}
                         onChange={handleChange}
                         className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
+                      >
+                        <option value="Single">Single</option>
+                        <option value="Double">Double</option>
+                        <option value="Triple">Triple</option>
+                        <option value="Homerun">Homerun</option>
+                      </select>
                     </div>
+
                     <div>
                       <label htmlFor="drillsAndExercises" className="block text-sm font-medium text-black">
                         Were the drills and exercises challenging and beneficial?
