@@ -1,11 +1,9 @@
 import { Link } from "@remix-run/react";
-import { useOptionalUser } from "~/utils";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../utils/supabaseClient";
 
 export default function Review() {
-  const user = useOptionalUser();
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
   const [formData, setFormData] = useState({
     overallExperience: '',
@@ -41,6 +39,7 @@ export default function Review() {
 
     if (error) {
       console.error('Error submitting review:', error);
+      showErrorPopup();
     } else {
       console.log('Review submitted successfully:', data);
       setFormData({
@@ -61,187 +60,211 @@ export default function Review() {
   return (
     <>
       <Helmet>
-        <title>Wildcat Summer Softball Camp Review</title>
+        <title>Review Wildcat Summer Softball Camp</title>
         <meta name="description" content="Submit your review for the Wildcat Summer Softball Camp." />
-        <meta name="keywords" content="softball camps, softball training, reviews, youth sports" />
-        <meta name="author" content="A1 Softball Camps" />
+        <meta name="keywords" content="Wildcat Summer Softball Camp, softball camp, reviews, youth sports, softball training" />
+        <meta name="author" content="Wildcat Summer Softball Camp" />
       </Helmet>
-      <main className="relative min-h-screen sm:flex sm:items-center sm:justify-center bg-white lg:bg-black">
+      <main className="relative min-h-screen bg-blue-900 sm:flex sm:items-center sm:justify-center">
         <div className="relative sm:pb-16 sm:pt-8">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-              <div className="absolute inset-0 hidden lg:block">
-                <div className="absolute inset-0 bg-[color:rgba(139,92,246,0.5)] mix-blend-multiply" />
-              </div>
-              <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32 bg-black lg:bg-transparent">
-                <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                  <span className="block uppercase text-white drop-shadow-md">
-                    Wildcat Summer
-                  </span>
-                  <span className="block uppercase text-white drop-shadow-md">
-                    SOFTBALL CAMP REVIEW
-                  </span>
-                </h1>
+              <div className="lg:pb-18 relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32">
+                <div className="bg-white bg-opacity-50 p-8 rounded-md">
+                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    Review Wildcat Summer Softball Camp
+                  </h1>
+                  <p className="mt-6 max-w-lg mx-auto text-center text-xl text-black sm:max-w-3xl">
+                    We appreciate your feedback! Please take a moment to share your experience at the Wildcat Summer Softball Camp.
+                  </p>
 
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                  <div>
-                    <label htmlFor="overallExperience" className="block text-sm font-medium text-white">
-                      Overall Experience
-                    </label>
-                    <input
-                      type="text"
-                      id="overallExperience"
-                      name="overallExperience"
-                      value={formData.overallExperience}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="drillsAndExercises" className="block text-sm font-medium text-white">
-                      Were the drills and exercises challenging and beneficial?
-                    </label>
-                    <input
-                      type="text"
-                      id="drillsAndExercises"
-                      name="drillsAndExercises"
-                      value={formData.drillsAndExercises}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="coachingStaff" className="block text-sm font-medium text-white">
-                      How would you rate the coaching staff?
-                    </label>
-                    <input
-                      type="text"
-                      id="coachingStaff"
-                      name="coachingStaff"
-                      value={formData.coachingStaff}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="instruction" className="block text-sm font-medium text-white">
-                      Did the coaches provide clear and helpful instruction?
-                    </label>
-                    <input
-                      type="text"
-                      id="instruction"
-                      name="instruction"
-                      value={formData.instruction}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="campSchedule" className="block text-sm font-medium text-white">
-                      How well organized was the camp schedule?
-                    </label>
-                    <input
-                      type="text"
-                      id="campSchedule"
-                      name="campSchedule"
-                      value={formData.campSchedule}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="breaksAndRest" className="block text-sm font-medium text-white">
-                      Were there enough breaks and rest periods?
-                    </label>
-                    <input
-                      type="text"
-                      id="breaksAndRest"
-                      name="breaksAndRest"
-                      value={formData.breaksAndRest}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="valueForCost" className="block text-sm font-medium text-white">
-                      Do you feel the camp provided good value for the cost?
-                    </label>
-                    <input
-                      type="text"
-                      id="valueForCost"
-                      name="valueForCost"
-                      value={formData.valueForCost}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="childEnjoyment" className="block text-sm font-medium text-white">
-                      Did your child enjoy their time at the camp?
-                    </label>
-                    <input
-                      type="text"
-                      id="childEnjoyment"
-                      name="childEnjoyment"
-                      value={formData.childEnjoyment}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="suggestions" className="block text-sm font-medium text-white">
-                      Do you have any suggestions for improving the camp in the future?
-                    </label>
-                    <textarea
-                      id="suggestions"
-                      name="suggestions"
-                      value={formData.suggestions}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="registrationProcess" className="block text-sm font-medium text-white">
-                      How easy was the registration process for the camp?
-                    </label>
-                    <input
-                      type="text"
-                      id="registrationProcess"
-                      name="registrationProcess"
-                      value={formData.registrationProcess}
-                      onChange={handleChange}
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-                  >
-                    Submit Review
-                  </button>
-                </form>
-
-                {isErrorPopupVisible && (
-                  <div className="fixed inset-0 flex items-center justify-center z-50">
-                    <div className="absolute inset-0 bg-black opacity-50" onClick={closeErrorPopup}></div>
-                    <div className="bg-white p-8 rounded-md border-2 border-red-600 z-50">
-                      <p>We are sorry but our Dugout is full.</p>
-                      <p>QUESTIONS? EMAIL A1 at <a href="mailto:a1softball12771@gmail.com">a1softball12771@gmail.com</a></p>
-                      <button onClick={closeErrorPopup} className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md">Close</button>
+                  <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                    <div>
+                      <label htmlFor="overallExperience" className="block text-sm font-medium text-black">
+                        Overall Experience
+                      </label>
+                      <input
+                        type="text"
+                        id="overallExperience"
+                        name="overallExperience"
+                        value={formData.overallExperience}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
                     </div>
-                  </div>
-                )}
+                    <div>
+                      <label htmlFor="drillsAndExercises" className="block text-sm font-medium text-black">
+                        Were the drills and exercises challenging and beneficial?
+                      </label>
+                      <input
+                        type="text"
+                        id="drillsAndExercises"
+                        name="drillsAndExercises"
+                        value={formData.drillsAndExercises}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="coachingStaff" className="block text-sm font-medium text-black">
+                        How would you rate the coaching staff?
+                      </label>
+                      <input
+                        type="text"
+                        id="coachingStaff"
+                        name="coachingStaff"
+                        value={formData.coachingStaff}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="instruction" className="block text-sm font-medium text-black">
+                        Did the coaches provide clear and helpful instruction?
+                      </label>
+                      <input
+                        type="text"
+                        id="instruction"
+                        name="instruction"
+                        value={formData.instruction}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="campSchedule" className="block text-sm font-medium text-black">
+                        How well organized was the camp schedule?
+                      </label>
+                      <input
+                        type="text"
+                        id="campSchedule"
+                        name="campSchedule"
+                        value={formData.campSchedule}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="breaksAndRest" className="block text-sm font-medium text-black">
+                        Were there enough breaks and rest periods?
+                      </label>
+                      <input
+                        type="text"
+                        id="breaksAndRest"
+                        name="breaksAndRest"
+                        value={formData.breaksAndRest}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="valueForCost" className="block text-sm font-medium text-black">
+                        Do you feel the camp provided good value for the cost?
+                      </label>
+                      <input
+                        type="text"
+                        id="valueForCost"
+                        name="valueForCost"
+                        value={formData.valueForCost}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="childEnjoyment" className="block text-sm font-medium text-black">
+                        Did your child enjoy their time at the camp?
+                      </label>
+                      <input
+                        type="text"
+                        id="childEnjoyment"
+                        name="childEnjoyment"
+                        value={formData.childEnjoyment}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="suggestions" className="block text-sm font-medium text-black">
+                        Do you have any suggestions for improving the camp in the future?
+                      </label>
+                      <textarea
+                        id="suggestions"
+                        name="suggestions"
+                        value={formData.suggestions}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="registrationProcess" className="block text-sm font-medium text-black">
+                        How easy was the registration process for the camp?
+                      </label>
+                      <input
+                        type="text"
+                        id="registrationProcess"
+                        name="registrationProcess"
+                        value={formData.registrationProcess}
+                        onChange={handleChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        required
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+                    >
+                      Submit Review
+                    </button>
+                  </form>
 
+                  {/* Error Popup */}
+                  {isErrorPopupVisible && (
+                    <div className="fixed inset-0 flex items-center justify-center z-50">
+                      <div className="absolute inset-0 bg-black opacity-50" onClick={closeErrorPopup}></div>
+                      <div className="bg-white p-8 rounded-md border-2 border-red-600 z-50">
+                        <p>There was an issue submitting your review. Please try again.</p>
+                        <button onClick={closeErrorPopup} className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md">Close</button>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mt-8 flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center justify-center rounded-md bg-green-500 px-4 py-2 text-base font-medium text-white hover:bg-green-600 ease-in duration-300 w-full sm:w-auto"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/instructors"
+                      className="inline-flex items-center justify-center rounded-md bg-yellow-500 px-4 py-2 text-base font-medium text-white hover:bg-yellow-600 ease-in duration-300 w-full sm:w-auto"
+                    >
+                      Instructors
+                    </Link>
+                    <Link
+                      to="https://www.wildcatssc24.com"
+                      className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-base font-medium text-white hover:bg-blue-600 ease-in duration-300 w-full sm:w-auto"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      to="/payment"
+                      className="inline-flex items-center justify-center rounded-md bg-red-500 px-4 py-2 text-base font-medium text-white hover:bg-red-600 ease-in duration-300 w-full sm:w-auto"
+                    >
+                      Pay Now
+                    </Link>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
