@@ -92,7 +92,7 @@ export default function Review() {
                       { label: 'Overall Experience', name: 'overallExperience' },
                       { label: 'Were the drills and exercises challenging and beneficial?', name: 'drillsAndExercises' },
                       { label: 'How would you rate the coaching staff?', name: 'coachingStaff' },
-                      { label: 'Did the coaches provide clear and helpful instruction?', name: 'instruction' },
+                      { label: 'Did the college players provide clear and helpful instruction?', name: 'instruction' },
                       { label: 'How well organized was the camp schedule?', name: 'campSchedule' },
                       { label: 'Were there enough breaks and rest periods?', name: 'breaksAndRest' },
                       { label: 'Do you feel the camp provided good value for the cost?', name: 'valueForCost' },
