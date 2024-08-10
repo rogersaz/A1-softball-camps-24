@@ -1,31 +1,3 @@
-import type { LinksFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
-import styles from "./styles/globals.css"; // Importing the global CSS
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles }, // Linking the global CSS
-];
-
-export default function App() {
-  return (
-    <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
-  );
-}
-
-
-
-
 import type {
   LinksFunction,
   LoaderFunctionArgs,
@@ -42,6 +14,7 @@ import {
 } from "@remix-run/react";
 
 import tailwindStylesheetUrl from "./styles/tailwind.css";
+import globalsStylesheetUrl from "./styles/globals.css"; // Importing globals.css
 import { getUser } from "./session.server";
 
 export const meta: MetaFunction = () => {
@@ -49,7 +22,10 @@ export const meta: MetaFunction = () => {
 };
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+  return [
+    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    { rel: "stylesheet", href: globalsStylesheetUrl }, // Linking globals.css
+  ];
 };
 
 export async function loader({ request }: LoaderFunctionArgs) {
