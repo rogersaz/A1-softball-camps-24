@@ -100,7 +100,10 @@ export default function Review() {
                       { label: 'How easy was the registration process for the camp?', name: 'registrationProcess' }
                     ].map((question) => (
                       <div key={question.name}>
-                        <label htmlFor={question.name} className="block text-sm font-medium text-black">
+                        <label
+                          htmlFor={question.name}
+                          className="block text-base font-bold text-black"  // Increased font size and bold
+                        >
                           {question.label}
                         </label>
                         <input
@@ -124,7 +127,10 @@ export default function Review() {
                     ))}
 
                     <div>
-                      <label htmlFor="suggestions" className="block text-sm font-medium text-black">
+                      <label
+                        htmlFor="suggestions"
+                        className="block text-base font-bold text-black" // Increased font size and bold
+                      >
                         Do you have any suggestions for improving the camp in the future?
                       </label>
                       <textarea
