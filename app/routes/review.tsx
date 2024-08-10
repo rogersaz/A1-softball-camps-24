@@ -3,6 +3,11 @@ import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
+// Initialize Supabase client
+const supabaseUrl = 'https://omhsepwfnkxmzjqvydun.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taHNlcHdmbmt4bXpqcXZ5ZHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDEzMzcsImV4cCI6MjAyNzIxNzMzN30.did1LkX1hVTxQs-nQLWxlSNSsL_WSJIV89HKcVPPfC4';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -42,27 +47,44 @@ export default function Review() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { data, error } = await supabase
-      .from('reviews')
-      .insert([formData]);
+    try {
+      const { data, error } = await supabase
+        .from('reviews')
+        .insert([{
+          overall_experience: formData.overallExperience,
+          drills_and_exercises: formData.drillsAndExercises,
+          coaching_staff: formData.coachingStaff,
+          instruction: formData.instruction,
+          camp_schedule: formData.campSchedule,
+          breaks_and_rest: formData.breaksAndRest,
+          value_for_cost: formData.valueForCost,
+          child_enjoyment: formData.childEnjoyment,
+          registration_process: formData.registrationProcess,
+          suggestions: formData.suggestions,
+        }]);
 
-    if (error) {
-      console.error('Error submitting review:', error);
+      if (error) {
+        console.error('Error submitting review:', error);
+        showErrorPopup();
+      } else {
+        console.log('Review submitted successfully:', data);
+        alert('Review Submitted Successfully! ⚾ You just hit a grand slam with that feedback! Thanks for helping us make the camp a home run! 🥎');
+        setFormData({
+          overallExperience: 'Single',
+          drillsAndExercises: 'Single',
+          coachingStaff: 'Single',
+          instruction: 'Single',
+          campSchedule: 'Single',
+          breaksAndRest: 'Single',
+          valueForCost: 'Single',
+          childEnjoyment: 'Single',
+          suggestions: '',
+          registrationProcess: 'Single',
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
       showErrorPopup();
-    } else {
-      console.log('Review submitted successfully:', data);
-      setFormData({
-        overallExperience: 'Single',
-        drillsAndExercises: 'Single',
-        coachingStaff: 'Single',
-        instruction: 'Single',
-        campSchedule: 'Single',
-        breaksAndRest: 'Single',
-        valueForCost: 'Single',
-        childEnjoyment: 'Single',
-        suggestions: '',
-        registrationProcess: 'Single',
-      });
     }
   };
 
