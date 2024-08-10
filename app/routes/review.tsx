@@ -1,21 +1,21 @@
 import { Link } from "@remix-run/react";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+iimport { createClient } from "@supabase/supabase-js";
 
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
   const [formData, setFormData] = useState({
-    overallExperience: 'Single', // Default to 'Single'
-    drillsAndExercises: '',
-    coachingStaff: '',
-    instruction: '',
-    campSchedule: '',
-    breaksAndRest: '',
-    valueForCost: '',
-    childEnjoyment: '',
+    overallExperience: 'Single',
+    drillsAndExercises: 'Single',
+    coachingStaff: 'Single',
+    instruction: 'Single',
+    campSchedule: 'Single',
+    breaksAndRest: 'Single',
+    valueForCost: 'Single',
+    childEnjoyment: 'Single',
     suggestions: '',
-    registrationProcess: '',
+    registrationProcess: 'Single',
   });
 
   const showErrorPopup = () => {
@@ -27,15 +27,15 @@ export default function Review() {
   };
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    let overallExperience = 'Single';
-    if (value === '1') overallExperience = 'Double';
-    if (value === '2') overallExperience = 'Triple';
-    if (value === '3') overallExperience = 'Homerun';
-    setFormData({ ...formData, overallExperience });
+    const { name, value } = e.target;
+    let scaleValue = 'Single';
+    if (value === '1') scaleValue = 'Double';
+    if (value === '2') scaleValue = 'Triple';
+    if (value === '3') scaleValue = 'Homerun';
+    setFormData({ ...formData, [name]: scaleValue });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -53,15 +53,15 @@ export default function Review() {
       console.log('Review submitted successfully:', data);
       setFormData({
         overallExperience: 'Single',
-        drillsAndExercises: '',
-        coachingStaff: '',
-        instruction: '',
-        campSchedule: '',
-        breaksAndRest: '',
-        valueForCost: '',
-        childEnjoyment: '',
+        drillsAndExercises: 'Single',
+        coachingStaff: 'Single',
+        instruction: 'Single',
+        campSchedule: 'Single',
+        breaksAndRest: 'Single',
+        valueForCost: 'Single',
+        childEnjoyment: 'Single',
         suggestions: '',
-        registrationProcess: '',
+        registrationProcess: 'Single',
       });
     }
   };
@@ -88,127 +88,41 @@ export default function Review() {
                   </p>
 
                   <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                    <div>
-                      <label htmlFor="overallExperience" className="block text-sm font-medium text-black">
-                        Overall Experience
-                      </label>
-                      <input
-                        type="range"
-                        id="overallExperience"
-                        name="overallExperience"
-                        min="0"
-                        max="3"
-                        step="1"
-                        defaultValue="0"
-                        onChange={handleSliderChange}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer custom-slider-thumb"
-                      />
-                      <div className="flex justify-between text-sm mt-2">
-                        <span>Single</span>
-                        <span>Double</span>
-                        <span>Triple</span>
-                        <span>Homerun</span>
+                    {[
+                      { label: 'Overall Experience', name: 'overallExperience' },
+                      { label: 'Were the drills and exercises challenging and beneficial?', name: 'drillsAndExercises' },
+                      { label: 'How would you rate the coaching staff?', name: 'coachingStaff' },
+                      { label: 'Did the coaches provide clear and helpful instruction?', name: 'instruction' },
+                      { label: 'How well organized was the camp schedule?', name: 'campSchedule' },
+                      { label: 'Were there enough breaks and rest periods?', name: 'breaksAndRest' },
+                      { label: 'Do you feel the camp provided good value for the cost?', name: 'valueForCost' },
+                      { label: 'Did your child enjoy their time at the camp?', name: 'childEnjoyment' },
+                      { label: 'How easy was the registration process for the camp?', name: 'registrationProcess' }
+                    ].map((question) => (
+                      <div key={question.name}>
+                        <label htmlFor={question.name} className="block text-sm font-medium text-black">
+                          {question.label}
+                        </label>
+                        <input
+                          type="range"
+                          id={question.name}
+                          name={question.name}
+                          min="0"
+                          max="3"
+                          step="1"
+                          defaultValue="0"
+                          onChange={handleSliderChange}
+                          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer custom-slider-thumb"
+                        />
+                        <div className="flex justify-between text-sm mt-2">
+                          <span>Single</span>
+                          <span>Double</span>
+                          <span>Triple</span>
+                          <span>Homerun</span>
+                        </div>
                       </div>
-                    </div>
+                    ))}
 
-                    <div>
-                      <label htmlFor="drillsAndExercises" className="block text-sm font-medium text-black">
-                        Were the drills and exercises challenging and beneficial?
-                      </label>
-                      <input
-                        type="text"
-                        id="drillsAndExercises"
-                        name="drillsAndExercises"
-                        value={formData.drillsAndExercises}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="coachingStaff" className="block text-sm font-medium text-black">
-                        How would you rate the coaching staff?
-                      </label>
-                      <input
-                        type="text"
-                        id="coachingStaff"
-                        name="coachingStaff"
-                        value={formData.coachingStaff}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="instruction" className="block text-sm font-medium text-black">
-                        Did the coaches provide clear and helpful instruction?
-                      </label>
-                      <input
-                        type="text"
-                        id="instruction"
-                        name="instruction"
-                        value={formData.instruction}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="campSchedule" className="block text-sm font-medium text-black">
-                        How well organized was the camp schedule?
-                      </label>
-                      <input
-                        type="text"
-                        id="campSchedule"
-                        name="campSchedule"
-                        value={formData.campSchedule}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="breaksAndRest" className="block text-sm font-medium text-black">
-                        Were there enough breaks and rest periods?
-                      </label>
-                      <input
-                        type="text"
-                        id="breaksAndRest"
-                        name="breaksAndRest"
-                        value={formData.breaksAndRest}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="valueForCost" className="block text-sm font-medium text-black">
-                        Do you feel the camp provided good value for the cost?
-                      </label>
-                      <input
-                        type="text"
-                        id="valueForCost"
-                        name="valueForCost"
-                        value={formData.valueForCost}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="childEnjoyment" className="block text-sm font-medium text-black">
-                        Did your child enjoy their time at the camp?
-                      </label>
-                      <input
-                        type="text"
-                        id="childEnjoyment"
-                        name="childEnjoyment"
-                        value={formData.childEnjoyment}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
                     <div>
                       <label htmlFor="suggestions" className="block text-sm font-medium text-black">
                         Do you have any suggestions for improving the camp in the future?
@@ -219,23 +133,10 @@ export default function Review() {
                         value={formData.suggestions}
                         onChange={handleChange}
                         className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
+                        placeholder="Your suggestions here..."
                       />
                     </div>
-                    <div>
-                      <label htmlFor="registrationProcess" className="block text-sm font-medium text-black">
-                        How easy was the registration process for the camp?
-                      </label>
-                      <input
-                        type="text"
-                        id="registrationProcess"
-                        name="registrationProcess"
-                        value={formData.registrationProcess}
-                        onChange={handleChange}
-                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        required
-                      />
-                    </div>
+
                     <button
                       type="submit"
                       className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
