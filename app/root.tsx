@@ -1,3 +1,7 @@
+import styles from "styles/globals.css"; 
+
+
+
 import type {
   LinksFunction,
   LoaderFunctionArgs,
