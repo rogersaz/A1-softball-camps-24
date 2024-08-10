@@ -1,0 +1,13 @@
+/* Custom Slider Thumb */
+.custom-slider-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background: url('/Softball-Slider-Icon.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .custom-slider-thumb
+  
