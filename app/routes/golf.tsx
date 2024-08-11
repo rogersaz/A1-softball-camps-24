@@ -22,7 +22,10 @@ export default function GolfSignup() {
           email: data.email,
           phone: data.phone,
           teamName: data.teamName || null,
-          teamMembers: data.teamMembers || null,
+          teamMember1: data.teamMember1 || null,
+          teamMember2: data.teamMember2 || null,
+          teamMember3: data.teamMember3 || null,
+          teamMember4: data.teamMember4 || null,
           sponsorshipInterest: data.sponsorshipInterest
         }]);
 
@@ -32,13 +35,13 @@ export default function GolfSignup() {
       }
 
       console.log('Supabase response:', supabaseData);
-      alert('Signup Successful! 🏌️‍♂️ Your participation is confirmed. See you at the tournament!');
+      alert('Signup Successful! ⛳️ Congratulations, you’ve just teed off in style! We’re ready to hit the greens, and you’re officially in the game. See you on the fairway! 🏌️‍♂️');
 
       // Reset the form after successful submission
       reset();
     } catch (error) {
       console.error('Error:', error);
-      alert(`Error submitting signup: 😱 Oops! Something went wrong. Please try again: ${error.message}`);
+      alert(`Error submitting signup: 😱 Oops! Looks like your ball landed in the bunker. Please check your form and try again. We'll get you back on the green! 🌱: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -97,12 +100,39 @@ export default function GolfSignup() {
             />
           </div>
           <div className="col-span-2 md:col-span-1">
-            <label className="block mb-2">Team Members' Names (MAX 4 Names)</label>
+            <label className="block mb-2">Team Member 1</label>
             <input 
               type="text" 
-              {...register("teamMembers")} 
+              {...register("teamMember1")} 
               className="w-full px-3 py-2 border rounded-md"
-              placeholder="Enter team members' names (optional)" 
+              placeholder="Enter the first team member's name (optional)" 
+            />
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <label className="block mb-2">Team Member 2</label>
+            <input 
+              type="text" 
+              {...register("teamMember2")} 
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Enter the second team member's name (optional)" 
+            />
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <label className="block mb-2">Team Member 3</label>
+            <input 
+              type="text" 
+              {...register("teamMember3")} 
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Enter the third team member's name (optional)" 
+            />
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <label className="block mb-2">Team Member 4</label>
+            <input 
+              type="text" 
+              {...register("teamMember4")} 
+              className="w-full px-3 py-2 border rounded-md"
+              placeholder="Enter the fourth team member's name (optional)" 
             />
           </div>
         </div>
@@ -126,6 +156,16 @@ export default function GolfSignup() {
             disabled={isSubmitting}
           >
             Submit Signup
+          </button>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <button 
+            type="button" 
+            className="bg-red-500 text-white px-4 py-3 rounded-md hover:bg-red-600 transition-colors duration-300"
+            onClick={() => alert('Redirecting to payment...')}
+          >
+            Pay Now
           </button>
         </div>
       </form>
