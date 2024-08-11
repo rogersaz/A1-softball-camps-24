@@ -124,7 +124,7 @@ export default function Review() {
                       <div key={question.name}>
                         <label
                           htmlFor={question.name}
-                          className="block text-base font-bold text-black"  // Increased font size and bold
+                          className="block text-base font-bold text-black"
                         >
                           {question.label}
                         </label>
@@ -151,7 +151,7 @@ export default function Review() {
                     <div>
                       <label
                         htmlFor="suggestions"
-                        className="block text-base font-bold text-black" // Increased font size and bold
+                        className="block text-base font-bold text-black"
                       >
                         Do you have any suggestions for improving the camp in the future?
                       </label>
@@ -173,6 +173,19 @@ export default function Review() {
                     </button>
                   </form>
 
+                  {/* Embedded YouTube Video */}
+                  <div className="mt-8 flex justify-center">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/5Ei14Glszxk"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+
                   {/* Error Popup */}
                   {isErrorPopupVisible && (
                     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -184,7 +197,7 @@ export default function Review() {
                     </div>
                   )}
 
-                  <div className="mt-8 flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                  <div className="mt-8 flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
                     <Link
                       to="/about"
                       className="inline-flex items-center justify-center rounded-md bg-green-500 px-4 py-2 text-base font-medium text-white hover:bg-green-600 ease-in duration-300 w-full sm:w-auto"
