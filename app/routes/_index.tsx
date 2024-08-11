@@ -109,6 +109,12 @@ export default function Index() {
                       >
                         Instructors
                       </Link>
+                      <Link
+                        to="https://wildcatssc24.com/review"
+                        className="flex items-center justify-center rounded-md bg-purple-500 px-4 py-3 text-base font-medium text-white hover:bg-purple-600 w-full sm:w-auto ease-in duration-300"
+                      >
+                        Review
+                      </Link>
                     </>
                   )}
                 </div>
