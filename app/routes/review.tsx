@@ -10,7 +10,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
-  const [isHuman, setIsHuman] = useState(false); // State to manage the "I'm human" checkbox
+  const [isHuman, setIsHuman] = useState(false);
+  const [questionAnswer, setQuestionAnswer] = useState(''); // State to manage the user's answer
   const [formData, setFormData] = useState({
     overallExperience: 'Single',
     drillsAndExercises: 'Single',
@@ -50,10 +51,18 @@ export default function Review() {
     setIsHuman(e.target.checked);
   };
 
+  const handleQuestionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuestionAnswer(e.target.value);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isHuman) {
       alert("Please confirm you are human before submitting the form.");
+      return;
+    }
+    if (questionAnswer.trim() !== '2') {
+      alert("Incorrect answer to the security question. Please try again.");
       return;
     }
     try {
@@ -91,6 +100,7 @@ export default function Review() {
           registrationProcess: 'Single',
         });
         setIsHuman(false); // Reset the checkbox
+        setQuestionAnswer(''); // Reset the question answer
       }
     } catch (error) {
       console.error('Error:', error);
@@ -188,6 +198,20 @@ export default function Review() {
                       </label>
                     </div>
 
+                    <div className="mt-4">
+                      <label htmlFor="securityQuestion" className="block text-base font-bold text-black">
+                        How many State softball championships did Willow Canyon HS win? (or One + 1)
+                      </label>
+                      <input
+                        type="text"
+                        id="securityQuestion"
+                        value={questionAnswer}
+                        onChange={handleQuestionChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        placeholder="Your answer"
+                      />
+                    </div>
+
                     <button
                       type="submit"
                       className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
@@ -256,4 +280,3 @@ export default function Review() {
     </>
   );
 }
-
