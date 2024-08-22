@@ -10,6 +10,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Review() {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
+  const [isHuman, setIsHuman] = useState(false); // State to manage the "I'm human" checkbox
   const [formData, setFormData] = useState({
     overallExperience: 'Single',
     drillsAndExercises: 'Single',
@@ -45,8 +46,16 @@ export default function Review() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsHuman(e.target.checked);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isHuman) {
+      alert("Please confirm you are human before submitting the form.");
+      return;
+    }
     try {
       const { data, error } = await supabase
         .from('reviews')
@@ -81,6 +90,7 @@ export default function Review() {
           suggestions: '',
           registrationProcess: 'Single',
         });
+        setIsHuman(false); // Reset the checkbox
       }
     } catch (error) {
       console.error('Error:', error);
@@ -165,6 +175,19 @@ export default function Review() {
                       />
                     </div>
 
+                    <div className="flex items-center mt-4">
+                      <input
+                        type="checkbox"
+                        id="humanCheck"
+                        checked={isHuman}
+                        onChange={handleCheckboxChange}
+                        className="mr-2"
+                      />
+                      <label htmlFor="humanCheck" className="text-black text-sm">
+                        I am not a robot
+                      </label>
+                    </div>
+
                     <button
                       type="submit"
                       className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700"
@@ -233,3 +256,4 @@ export default function Review() {
     </>
   );
 }
+
