@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { useForm } from "react-hook-form";
 import 'tailwindcss/tailwind.css';
@@ -7,7 +7,7 @@ const supabaseUrl = 'https://omhsepwfnkxmzjqvydun.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taHNlcHdmbmt4bXpqcXZ5ZHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDEzMzcsImV4cCI6MjAyNzIxNzMzN30.did1LkX1hVTxQs-nQLWxlSNSsL_WSJIV89HKcVPPfC4';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default function GolfSignup() {
+function GolfSignup() {
   const { register, handleSubmit, reset } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -48,10 +48,7 @@ export default function GolfSignup() {
   };
 
   return (
-    <div 
-      className="flex justify-center items-center min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url('/Golf background.jpg')` }}
-    >
+    <div className="flex justify-center items-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url('/Golf background.jpg')` }}>
       <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
         <div className="flex flex-col items-center mb-4">
           <h2 className="text-2xl font-semibold text-center">
@@ -169,6 +166,36 @@ export default function GolfSignup() {
           </button>
         </div>
       </form>
+
+      {/* Add the additional idea form component below */}
+      <IdeaFormComponent />
     </div>
   );
 }
+
+function IdeaFormComponent() {
+  useEffect(() => {
+    const ideaForm = new IdeaForm("#idea");
+  }, []);
+
+  return (
+    <div id="idea" className="idea-form">
+      <button type="button" className="idea-form__btn idea-form__btn--start" data-toggle="true">
+        Share your ideas
+      </button>
+      <div className="idea-form__fill"></div>
+      <div className="idea-form__content">
+        <label className="idea-form__label" htmlFor="name">Name</label>
+        <input id="name" type="text" className="idea-form__textarea" placeholder="Your name" />
+        <label className="idea-form__label" htmlFor="email">Email</label>
+        <input id="email" type="email" className="idea-form__textarea" placeholder="Your email" />
+        <button type="submit" className="idea-form__btn">Submit</button>
+      </div>
+    </div>
+  );
+}
+
+// The TypeScript class (IdeaForm) should be added as-is to your project.
+// Ensure to import this file if it is located in a different file.
+
+export default GolfSignup;
