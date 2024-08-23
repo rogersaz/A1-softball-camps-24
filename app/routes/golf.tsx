@@ -7,7 +7,7 @@ const supabaseUrl = 'https://omhsepwfnkxmzjqvydun.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taHNlcHdmbmt4bXpqcXZ5ZHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDEzMzcsImV4cCI6MjAyNzIxNzMzN30.did1LkX1hVTxQs-nQLWxlSNSsL_WSJIV89HKcVPPfC4';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-function GolfSignup() {
+export default function GolfSignup() {
   const { register, handleSubmit, reset } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,6 +46,10 @@ function GolfSignup() {
       setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    const ideaForm = new IdeaForm("#idea");
+  }, []);
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url('/Golf background.jpg')` }}>
@@ -195,7 +199,4 @@ function IdeaFormComponent() {
   );
 }
 
-// The TypeScript class (IdeaForm) should be added as-is to your project.
-// Ensure to import this file if it is located in a different file.
-
-export default GolfSignup;
+// Define the IdeaForm class here or
