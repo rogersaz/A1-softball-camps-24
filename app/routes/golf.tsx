@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { useForm } from "react-hook-form";
 import 'tailwindcss/tailwind.css';
-import '../styles/pencil.css'; // Ensure the correct path to the CSS file
 
 const supabaseUrl = 'https://omhsepwfnkxmzjqvydun.supabase.co';
-const supabaseKey = 'your_supabase_key';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taHNlcHdmbmt4bXpqcXZ5ZHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDEzMzcsImV4cCI6MjAyNzIxNzMzN30.did1LkX1hVTxQs-nQLWxlSNSsL_WSJIV89HKcVPPfC4';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function GolfSignup() {
@@ -48,17 +47,12 @@ export default function GolfSignup() {
     }
   };
 
-  useEffect(() => {
-    const ideaForm = new IdeaForm("#idea");
-  }, []);
-
   return (
     <div 
-      className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center"
+      className="flex justify-center items-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url('/Golf background.jpg')` }}
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full mb-8">
-        {/* Golf Signup Form */}
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
         <div className="flex flex-col items-center mb-4">
           <h2 className="text-2xl font-semibold text-center">
             Golf Tournament Signup
@@ -175,35 +169,6 @@ export default function GolfSignup() {
           </button>
         </div>
       </form>
-
-      {/* Idea Form */}
-      <form id="idea" className="idea-form" action="">
-        <svg className="idea-form__icon" viewBox="0 0 32 32" width="32px" height="32px" aria-hidden="true">
-          <g fill="currentcolor">
-            <path d="M16,2A10,10,0,0,0,6,12a9.19,9.19,0,0,0,3.46,7.62c1,.93,1.54,1.46,1.54,2.38h2c0-1.84-1.11-2.87-2.19-3.86A7.2,7.2,0,0,1,8,12a8,8,0,0,1,16,0,7.2,7.2,0,0,1-2.82,6.14c-1.07,1-2.18,2-2.18,3.86h2c0-.92.53-1.45,1.54-2.39A9.18,9.18,0,0,0,26,12,10,10,0,0,0,16,2Z" />
-            <rect x="11" y="24" width="10" height="2"/>
-            <rect x="13" y="28" width="6" height="2"/>
-          </g>
-        </svg>
-        <button className="idea-form__btn idea-form__btn--start" type="button" data-toggle>
-          I have an idea
-        </button>
-        <div className="idea-form__fill"></div>
-        <div className="idea-form__content">
-          <label htmlFor="my-idea" className="idea-form__label">Idea</label>
-          <textarea id="my-idea" className="idea-form__textarea" placeholder="My idea is…"></textarea>
-          <button className="idea-form__btn" type="submit" disabled>Submit</button>
-        </div>
-      </form>
     </div>
   );
 }
-
-// JavaScript logic for the "Idea Form"
-class IdeaForm {
-  // ... (the rest of the IdeaForm class code remains unchanged)
-}
-
-window.addEventListener("DOMContentLoaded",() => {
-  const ideaForm = new IdeaForm("#idea");
-});
