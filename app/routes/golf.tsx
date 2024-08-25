@@ -8,9 +8,14 @@ const supabaseUrl = 'https://omhsepwfnkxmzjqvydun.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taHNlcHdmbmt4bXpqcXZ5ZHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDEzMzcsImV4cCI6MjAyNzIxNzMzN30.did1LkX1hVTxQs-nQLWxlSNSsL_WSJIV89HKcVPPfC4';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+export const links = () => [
+  { rel: "stylesheet", href: /styles/style2.scss, loader: "sass" }
+];
+
 export default function GolfSignup() {
   const { register, handleSubmit, reset } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const onSubmit = async (data) => {
     console.log('Submitting data:', data);
